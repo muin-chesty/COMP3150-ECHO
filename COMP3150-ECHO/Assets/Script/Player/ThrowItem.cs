@@ -15,16 +15,15 @@ public class ThrowItem : MonoBehaviour
     private int currentAmmoIndex = 0;
     bool isClicked = false;
 
+    public int GetAmmoCount()
+    {
+        return ammoCount - currentAmmoIndex;
+    }
     [Space]
     public GameObject rock;
     void Start()
     {
         currentItem = null;
-        foreach(GameObject i in items)
-        {
-           GameObject temp =  Instantiate(i);
-           temp.SetActive(false);
-        }
     }
 
     // Update is called once per frame
