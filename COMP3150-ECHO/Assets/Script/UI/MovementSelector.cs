@@ -8,6 +8,8 @@ public class MovementSelector : MonoBehaviour
     private MouseMovement mouseMovement;
     [SerializeField]
     private SmoothMouseMovement smoothMouseMovement;
+    [SerializeField]
+    private DirectionalMovemet directionalMovemet;
 
     private void Awake()
     {
@@ -18,6 +20,7 @@ public class MovementSelector : MonoBehaviour
         movement.enabled = true;
         mouseMovement.enabled = false;
         smoothMouseMovement.enabled = false;
+        directionalMovemet.enabled = false;
         
     }
 
@@ -26,7 +29,7 @@ public class MovementSelector : MonoBehaviour
         movement.enabled = false;
         mouseMovement.enabled = true;
         smoothMouseMovement.enabled = false;
-        transform.Translate(Vector3.zero);
+        directionalMovemet.enabled = false;
     }
 
     public void EnableSmoothMouseMovement()
@@ -34,6 +37,14 @@ public class MovementSelector : MonoBehaviour
         movement.enabled = false;
         mouseMovement.enabled = false;
         smoothMouseMovement.enabled = true;
-        transform.Translate(Vector3.zero);
+        directionalMovemet.enabled = false;
+    }
+
+    public void EnableDirectionalMovement()
+    {
+        movement.enabled = false;
+        mouseMovement.enabled = false;
+        smoothMouseMovement.enabled = false;
+        directionalMovemet.enabled = true;
     }
 }
