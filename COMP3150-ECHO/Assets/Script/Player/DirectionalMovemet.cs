@@ -6,6 +6,7 @@ public class DirectionalMovemet : MonoBehaviour
     Rigidbody2D rigidbody;
     [SerializeField]
     private float speed = 2f;
+    public GameObject rippleEffect;
     void Start()
     {
         rigidbody = GetComponent<Rigidbody2D>();
@@ -15,12 +16,18 @@ public class DirectionalMovemet : MonoBehaviour
     {
         movement.x = Input.GetAxisRaw("Horizontal");
         movement.y = Input.GetAxisRaw("Vertical");
-       
+        if(movement.x > 0.01f || movement.y > 0.00000000001f)
+        {
+            rippleEffect.SetActive(true);
+        }
+        else
+        {
+            rippleEffect.SetActive(false);
+        }
     }
 
     private void FixedUpdate()
     {
-        Debug.Log(rigidbody.velocity);
         rigidbody.velocity = transform.up * movement.y * (speed * Time.fixedDeltaTime);
     }
 }

@@ -19,8 +19,11 @@ public class Movement : MonoBehaviour
 
     private void FixedUpdate()
     {
-        
-        rb.MovePosition(rb.position + movement * moveSpeed * Time.fixedDeltaTime);
+        rb.velocity = ((transform.up * movement.y) +
+            (transform.right * movement.x))
+            * moveSpeed * Time.fixedDeltaTime;
+            ;
+       // rb.MovePosition(rb.position + movement * moveSpeed * Time.fixedDeltaTime);
 
     }
 }
