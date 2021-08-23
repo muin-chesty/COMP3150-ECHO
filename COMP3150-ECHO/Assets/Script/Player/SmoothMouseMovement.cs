@@ -18,13 +18,14 @@ public class SmoothMouseMovement : MonoBehaviour
         // LEFT CLICK
         if (Input.GetMouseButton(0))
         {
+            MouseMovement.isClicked = true;
             lastMouseClick = cam.ScreenToWorldPoint(Input.mousePosition);
             transform.position = Vector2.Lerp(transform.position, lastMouseClick, (speed * Time.deltaTime));
 
         }
-        if (!lastMouseClick.Equals(transform.position))
+        else
         {
-
+            MouseMovement.isClicked = false;
         }
 
     }

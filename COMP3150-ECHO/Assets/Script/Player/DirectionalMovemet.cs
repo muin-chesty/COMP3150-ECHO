@@ -6,7 +6,7 @@ public class DirectionalMovemet : MonoBehaviour
     Rigidbody2D rigidbody;
     [SerializeField]
     private float speed = 2f;
-    public GameObject rippleEffect;
+    
     void Start()
     {
         rigidbody = GetComponent<Rigidbody2D>();
@@ -14,15 +14,13 @@ public class DirectionalMovemet : MonoBehaviour
 
     void Update()
     {
+        
         movement.x = Input.GetAxisRaw("Horizontal");
         movement.y = Input.GetAxisRaw("Vertical");
-        if(movement.x > 0.01f || movement.y > 0.00000000001f)
+        // FOR VFX COMING FROM MOUSE SCRIPTS
+        if (movement.Equals(Vector2.zero))
         {
-            rippleEffect.SetActive(true);
-        }
-        else
-        {
-            rippleEffect.SetActive(false);
+            MouseMovement.isClicked = false;
         }
     }
 

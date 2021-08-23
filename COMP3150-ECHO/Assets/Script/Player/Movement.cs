@@ -15,6 +15,11 @@ public class Movement : MonoBehaviour
     {
         movement.x = Input.GetAxisRaw("Horizontal");
         movement.y = Input.GetAxisRaw("Vertical");
+        // FOR VFX COMING FROM MOUSE SCRIPTS
+        if (movement.Equals(Vector2.zero))
+        {
+            MouseMovement.isClicked = false;
+        }
     }
 
     private void FixedUpdate()
@@ -23,7 +28,5 @@ public class Movement : MonoBehaviour
             (transform.right * movement.x))
             * moveSpeed * Time.fixedDeltaTime;
             ;
-       // rb.MovePosition(rb.position + movement * moveSpeed * Time.fixedDeltaTime);
-
     }
 }
