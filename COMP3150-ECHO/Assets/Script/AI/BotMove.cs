@@ -9,6 +9,8 @@ public class BotMove : MonoBehaviour
     public float minTime;
     public float maxTime;
 
+    public float rotationalSpeed;
+
     private float moveTimer;
     private float idleTimer;
 
@@ -16,18 +18,14 @@ public class BotMove : MonoBehaviour
     public float maxRotationRange;
     private float rotationRange;
 
-    private Vector2 position;
-    private Vector2 direction;
-    public float distance;
-
-    public LayerMask wallLayer;
-
-    private RaycastHit2D hit;
+    private float rotated;
+    private float direction;
 
     enum State
     {
       Idle,
-      Moving
+      Moving,
+      Rotating
     };
 
     private State state;
@@ -67,25 +65,40 @@ public class BotMove : MonoBehaviour
 
                 // Move forward
                 velocity = speed;
-                transform.Translate(velocity*Time.deltaTime,0,0);
+                transform.Translate(0, velocity * Time.deltaTime, 0);
+                break;
+
+            case State.Rotating:
+
+                transform.Rotate(0,0,(rotationalSpeed*direction)*Time.deltaTime);
+                rotated += rotationalSpeed * Time.deltaTime;
+                if(rotated >= rotationRange)
+                {
+                    moveTimer = Random.Range(minTime, maxTime);
+                    idleTimer = 0;
+                    rotated = 0;
+                    state = State.Moving;
+                }
                 break;
         }
     }
 
     void OnTriggerEnter2D(Collider2D collider)
     {
-        moveTimer = 0;
-        idleTimer = Random.Range(minTime, maxTime);
-        rotationRange = transform.rotation.z + Random.Range(minRotationRange, maxRotationRange);
-        transform.Rotate(0,0,rotationRange);
-
-        position = transform.position;
-        direction = Vector2.up;
-        hit = Physics2D.Raycast(position, direction, distance, wallLayer);
-        if (hit.collider != null)
+        if (state != State.Rotating)
         {
-            rotationRange = Random.Range(minRotationRange, maxRotationRange); ;
-            transform.Rotate(0, 0, rotationRange);
+            if (transform.rotation.z <= 0)
+            {
+                direction = -1;
+            }
+            else
+            {
+                direction = 1;
+            }
+            moveTimer = 0;
+            idleTimer = Random.Range(minTime, maxTime);
+            rotationRange = Random.Range(minRotationRange, maxRotationRange);
+            state = State.Rotating;
         }
     }
 }
