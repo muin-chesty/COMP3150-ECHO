@@ -23,8 +23,11 @@ public class VFXPlayer : MonoBehaviour
         if (rb.velocity != Vector2.zero || MouseMovement.isClicked)
         {
             
-
-            light.SetActive(true);
+            if(light !=  null)
+            {
+                light.SetActive(true);
+            }
+            
             main.startColor = new Color(main.startColor.color.r,
                 main.startColor.color.g,
                 main.startColor.color.b,
@@ -33,8 +36,11 @@ public class VFXPlayer : MonoBehaviour
         }
         else
         {
-
-            light.SetActive(false);
+            if(light != null)
+            {
+                light.SetActive(false);
+            }
+            
             main.startColor = new Color(main.startColor.color.r,
                main.startColor.color.g,
                main.startColor.color.b,
