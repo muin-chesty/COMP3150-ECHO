@@ -4,12 +4,16 @@ public class MouseMovement : MonoBehaviour
 {
     private Camera cam;
     private Vector2 lastMouseClick;
+    public static bool isClicked = false;
+
+   
 
     [SerializeField]
     private float speed = 5f;
     void Start()
     {
         cam = Camera.main;
+        
     }
     void Update()
     {
@@ -21,9 +25,14 @@ public class MouseMovement : MonoBehaviour
         }
         if(!lastMouseClick.Equals(transform.position))
         {
-            transform.position = Vector2.MoveTowards(transform.position, lastMouseClick, (speed * Time.deltaTime));
-
+            transform.position =  Vector2.MoveTowards(transform.position, lastMouseClick, (speed * Time.deltaTime));
+            isClicked = true;
         }
+        else
+        {
+            isClicked = false;
+        }
+        
 
     }
 }
