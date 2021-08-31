@@ -8,6 +8,7 @@ public class VFXPlayer : MonoBehaviour
     public GameObject light;
     Vector2 movement;
     Rigidbody2D rb;
+    private float alpha = 0f;
     
     void Start()
     {
@@ -20,18 +21,19 @@ public class VFXPlayer : MonoBehaviour
         var main = soundWaveEffect.main;
         movement.x = Input.GetAxisRaw("Horizontal");
         movement.y = Input.GetAxisRaw("Vertical");
-        if (rb.velocity != Vector2.zero || MouseMovement.isClicked)
+        main.startColor = new Color(main.startColor.color.r,
+                main.startColor.color.g,
+                main.startColor.color.b,
+                alpha);
+        if (rb.velocity != Vector2.zero || movement != Vector2.zero)
         {
             
             if(light !=  null)
             {
                 light.SetActive(true);
             }
+            alpha = 1f;
             
-            main.startColor = new Color(main.startColor.color.r,
-                main.startColor.color.g,
-                main.startColor.color.b,
-                1f);
 
         }
         else
@@ -40,12 +42,7 @@ public class VFXPlayer : MonoBehaviour
             {
                 light.SetActive(false);
             }
-            
-            main.startColor = new Color(main.startColor.color.r,
-               main.startColor.color.g,
-               main.startColor.color.b,
-               0f);
-
+            alpha -= (Time.deltaTime + Time.deltaTime);
         }
     }
 }
