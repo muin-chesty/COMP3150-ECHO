@@ -14,7 +14,7 @@ public class RandomEchoSpawner : MonoBehaviour
     private float minRange = 1f;
     private float timer = 0f;
     private float spawnAt = 0f;
-
+    
 
 
     void Update()
