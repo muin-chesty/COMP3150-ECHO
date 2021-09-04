@@ -14,8 +14,8 @@ public class RandomEchoSpawner : MonoBehaviour
     private float minRange = 1f;
     private float timer = 0f;
     private float spawnAt = 2f;
-    
 
+    public GameObject light;
 
     void Update()
     {
@@ -27,7 +27,14 @@ public class RandomEchoSpawner : MonoBehaviour
             temp.transform.position = transform.position;
             Destroy(temp, 3f);
             spawnAt = Random.Range(minRange, maxRange);
+            if(light != null)
+            {
+                light.SetActive(true);
+            }
+            
+            
         }
+
         
     }
 }

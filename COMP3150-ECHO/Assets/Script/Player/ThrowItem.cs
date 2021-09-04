@@ -14,6 +14,8 @@ public class ThrowItem : MonoBehaviour
     private int ammoCount = 5;
     private int currentAmmoIndex = 0;
     bool isClicked = false;
+    [Space]
+    public GameObject itemRippleEffect;
 
     public int GetAmmoCount()
     {
@@ -60,12 +62,17 @@ public class ThrowItem : MonoBehaviour
         }
         if(isClicked)
         {
-
+            
             // MAKE THE LAST ITEM MOVE TOWARDS MOUSE
             if(currentItem)
             {
-                currentItem.position = Vector2.MoveTowards(currentItem.position, lastMouseClick, (speed * Time.deltaTime));
-
+              //currentItem.GetComponent<Rigidbody2D>().velocity = Vector2.MoveTowards(currentItem.position, lastMouseClick, (speed * Time.deltaTime));
+               currentItem.position = Vector2.MoveTowards(currentItem.position, lastMouseClick, (speed * Time.deltaTime));
+              if(currentItem.position.x == lastMouseClick.x && currentItem.position.y == lastMouseClick.y)
+                {
+                    isClicked = false;
+                    Destroy(currentItem.gameObject);
+                }
             }
 
         }
