@@ -11,7 +11,6 @@ public class FinalMovement : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
     }
 
-    
     void Update()
     {
         movement.x = Input.GetAxisRaw("Horizontal");

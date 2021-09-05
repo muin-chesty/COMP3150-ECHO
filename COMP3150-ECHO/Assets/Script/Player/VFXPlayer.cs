@@ -1,18 +1,23 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Experimental.Rendering.Universal;
 
 public class VFXPlayer : MonoBehaviour
 {
     public ParticleSystem soundWaveEffect;
-    public GameObject light;
+    private Light2D lighting;
+
+    private float lightIntensity;
     Vector2 movement;
     Rigidbody2D rb;
-    private float alpha = 0f;
+    private float alpha = 1.0f;
     
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        lighting = GetComponentInChildren<Light2D>();
+        lightIntensity = 0.1f;
     }
 
     // Update is called once per frame
@@ -25,24 +30,17 @@ public class VFXPlayer : MonoBehaviour
                 main.startColor.color.g,
                 main.startColor.color.b,
                 alpha);
-        if (rb.velocity != Vector2.zero || movement != Vector2.zero)
+        if (rb.velocity != Vector2.zero && movement != Vector2.zero)
         {
-            
-            if(light !=  null)
+            if (soundWaveEffect.isStopped)
             {
-                light.SetActive(true);
+                soundWaveEffect.Play();
             }
-            alpha = 1f;
-            
-
         }
         else
         {
-            if(light != null)
-            {
-                light.SetActive(false);
-            }
-            alpha -= (Time.deltaTime + Time.deltaTime);
+            soundWaveEffect.Stop();
         }
+        lighting.intensity = lightIntensity * (soundWaveEffect.particleCount)/5f;
     }
 }

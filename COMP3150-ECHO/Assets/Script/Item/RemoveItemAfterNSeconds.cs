@@ -23,12 +23,7 @@ public class RemoveItemAfterNSeconds : MonoBehaviour
         yield return new WaitForSeconds(removeAfter);
         Destroy(gameObject);
     }
-    // Update is called once per frame
-    private void Update()
-    {
-     
-    }
-
+  
     private void OnCollisionEnter2D(Collision2D collision)
     {
 
@@ -39,6 +34,5 @@ public class RemoveItemAfterNSeconds : MonoBehaviour
     {
         GameObject temp = Instantiate(itemRippleEffect);
         temp.transform.position = transform.position;
-        Destroy(temp, 2f);
     }
 }
