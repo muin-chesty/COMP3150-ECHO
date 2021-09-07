@@ -20,6 +20,5 @@ public class TakeDamage : MonoBehaviour
     private void OnParticleCollision(GameObject other)
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-
     }
 }
