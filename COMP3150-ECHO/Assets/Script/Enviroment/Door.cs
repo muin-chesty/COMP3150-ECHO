@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Door : MonoBehaviour
 {
+    private KeyManager keyManager;
+
     public GameObject door;
     public float distance;
     private float speed;
@@ -25,6 +27,7 @@ public class Door : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        keyManager = FindObjectOfType<KeyManager>();
         speed = 10;
         state = State.Idle;
         keyFound = false;
@@ -66,6 +69,7 @@ public class Door : MonoBehaviour
         if (keyRequired == true)
         {
             //check if key has beenn collected
+            keyFound = keyManager.CheckKeyFound(keyCode);
             if (keyFound)
             {
                 state = State.Opening;

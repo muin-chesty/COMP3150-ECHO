@@ -4,14 +4,23 @@ using UnityEngine;
 
 public class KeyManager : MonoBehaviour
 {
+    private Keys key;
+
     // Start is called before the first frame update
     void Start()
     {
+        key = GetComponent<Keys>();
     }
 
-    // Update is called once per frame
-    void Update()
+    public void KeyCollected(int i)
     {
-        
+        key.SetKeyStatus(i);
     }
+
+    public bool CheckKeyFound(int i)
+    {
+        bool status = key.KeyStatus(i);
+        return status;
+    }
+
 }
