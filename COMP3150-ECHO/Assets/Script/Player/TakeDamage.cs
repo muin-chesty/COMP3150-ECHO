@@ -5,20 +5,45 @@ using UnityEngine.SceneManagement;
 
 public class TakeDamage : MonoBehaviour
 {
-    const string ECHO_RIPPLE_LAYER = "";
+    [SerializeField]
+    private float restartsIn = 2f;
+    private float timer = 0f;
+    [SerializeField]
+    private Canvas dieTransitionCanvas;
+    private bool isPlayerAlive; // TO KEEP TRACK OF PLAYER'S ALIVE STATUS. IF PLAYER IS DEAD MOVEMENT CONTROL WOULD BE DISABLED
+
+    private FinalMovement move;
     void Start()
     {
-        
+        isPlayerAlive = true;
+        move = GetComponent<FinalMovement>();
     }
 
-    // Update is called once per frame
+    
     void Update()
     {
-        
+        if(!isPlayerAlive)
+        {
+            timer += Time.deltaTime;
+            if(timer >= restartsIn)
+            {
+                Time.timeScale = 1f;
+                timer = 0f;
+                isPlayerAlive = true;
+                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+            }
+        }
     }
-
+    public bool IsPlayerAlive()
+    {
+        return isPlayerAlive;
+    }
     private void OnParticleCollision(GameObject other)
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        isPlayerAlive = false;
+        Destroy(move);
+        dieTransitionCanvas.gameObject.SetActive(true);
+        Time.timeScale = 0.5f;
+        
     }
 }

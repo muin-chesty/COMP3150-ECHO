@@ -1,3 +1,4 @@
+using System.Diagnostics;
 using UnityEngine;
 
 public class FinalMovement : MonoBehaviour
@@ -6,9 +7,12 @@ public class FinalMovement : MonoBehaviour
     Rigidbody2D rb;
     [SerializeField]
     private float speed = 10;
+
+    private TakeDamage takeDamage;
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        takeDamage = GetComponent<TakeDamage>();
     }
 
     void Update()
@@ -19,9 +23,12 @@ public class FinalMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
-        rb.velocity = movement * speed * Time.fixedDeltaTime;
-        ;
-        rb.rotation = 0f;
-        rb.angularVelocity = 0f;
+        if(takeDamage.IsPlayerAlive())
+        {
+            rb.velocity = movement * speed * Time.fixedDeltaTime;
+            rb.rotation = 0f;
+            rb.angularVelocity = 0f;
+        }
+       
     }
 }
