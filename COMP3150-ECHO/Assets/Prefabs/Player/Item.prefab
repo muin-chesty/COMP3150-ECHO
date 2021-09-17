@@ -85,6 +85,7 @@ GameObject:
   - component: {fileID: 2338781594029200113}
   - component: {fileID: -1140396968026638812}
   - component: {fileID: 7248049080356120413}
+  - component: {fileID: 1829312742189875257}
   m_Layer: 9
   m_Name: Item
   m_TagString: Untagged
@@ -220,3 +221,15 @@ MonoBehaviour:
   removeAfter: 2
   itemStoppedMoving: 0
   itemRippleEffect: {fileID: 7614995459663806386, guid: 0e0a182594fe46a4491313b3d47695e5, type: 3}
+--- !u!114 &1829312742189875257
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8754944616683626144}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f48cebe420edc2f4d947e950068e4010, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

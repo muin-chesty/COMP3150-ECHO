@@ -8,11 +8,11 @@ public class FinalMovement : MonoBehaviour
     [SerializeField]
     private float speed = 10;
 
-    private TakeDamage takeDamage;
+    private HealthManager hp;
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        takeDamage = GetComponent<TakeDamage>();
+        hp = GetComponent<HealthManager>();
     }
 
     void Update()
@@ -23,7 +23,7 @@ public class FinalMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if(takeDamage.IsPlayerAlive())
+        if(hp.GetHealth() >= 1)
         {
             rb.velocity = movement * speed * Time.fixedDeltaTime;
             rb.rotation = 0f;

@@ -6,16 +6,16 @@ public class RemoveItemAfterNSeconds : MonoBehaviour
 {
     [SerializeField]
     private float removeAfter = 2f;
-    private Rigidbody2D rb;
 
     public bool itemStoppedMoving = false;
 
     [Space]
     public GameObject itemRippleEffect;
+
     void Start()
     {
-        rb = GetComponent<Rigidbody2D>();
         StartCoroutine(Remove());
+
     }
     
     IEnumerator Remove()
@@ -23,7 +23,6 @@ public class RemoveItemAfterNSeconds : MonoBehaviour
         yield return new WaitForSeconds(removeAfter);
         Destroy(gameObject);
     }
-  
     private void OnCollisionEnter2D(Collision2D collision)
     {
 

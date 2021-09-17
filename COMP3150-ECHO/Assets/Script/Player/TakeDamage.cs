@@ -1,7 +1,5 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
+
 
 public class TakeDamage : MonoBehaviour
 {
@@ -10,40 +8,42 @@ public class TakeDamage : MonoBehaviour
     private float timer = 0f;
     [SerializeField]
     private Canvas dieTransitionCanvas;
-    private bool isPlayerAlive; // TO KEEP TRACK OF PLAYER'S ALIVE STATUS. IF PLAYER IS DEAD MOVEMENT CONTROL WOULD BE DISABLED
+    private bool isPlayerHit; // TO KEEP TRACK OF PLAYER'S ALIVE STATUS. IF PLAYER IS DEAD MOVEMENT CONTROL WOULD BE DISABLED
 
-    private FinalMovement move;
+    private HealthManager hp;
     void Start()
     {
-        isPlayerAlive = true;
-        move = GetComponent<FinalMovement>();
+        isPlayerHit = false;
+        hp = GetComponent<HealthManager>();
     }
 
     
     void Update()
     {
-        if(!isPlayerAlive)
+        if(isPlayerHit == true)
         {
             timer += Time.deltaTime;
             if(timer >= restartsIn)
             {
                 Time.timeScale = 1f;
                 timer = 0f;
-                isPlayerAlive = true;
-                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+                isPlayerHit = false;
+                hp.TakeDamage(1);
             }
         }
     }
-    public bool IsPlayerAlive()
+    public bool IsPlayerHit()
     {
-        return isPlayerAlive;
+        return isPlayerHit;
     }
     private void OnParticleCollision(GameObject other)
-    {
-        isPlayerAlive = false;
-        Destroy(move);
-        dieTransitionCanvas.gameObject.SetActive(true);
-        Time.timeScale = 0.5f;
-        
+    {     
+        isPlayerHit = true;    
+        if (hp.GetHealth() > 1) // TO ENSURE DIE TRANSITION DOESN'T APPEAR WHEN GAME IS OVER
+        {
+            dieTransitionCanvas.gameObject.SetActive(true);
+            Time.timeScale = 0.7f;
+        }
+
     }
 }
