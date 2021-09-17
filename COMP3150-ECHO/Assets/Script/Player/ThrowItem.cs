@@ -5,7 +5,7 @@ using UnityEngine;
 public class ThrowItem : MonoBehaviour
 {
     public Camera cam;
-  
+    private HealthManager hp;
     private Vector2 lastMouseClick;
     public float speed = 10f;
     [SerializeField]
@@ -22,12 +22,11 @@ public class ThrowItem : MonoBehaviour
     }
     [Space]
     public ItemMove rock;
-    void Start()
-    {
-        currentItem = null;
-    }
 
-    // Update is called once per frame
+    private void Start()
+    {
+        hp = GetComponent<HealthManager>();
+    }
     void Update()
     {
         // IF RIGHT-MOUSE CLICKED
@@ -36,7 +35,7 @@ public class ThrowItem : MonoBehaviour
             isClicked = true;
 
             // CHECK IF HAS AMMO
-            if (currentAmmoIndex < ammoCount)
+            if (currentAmmoIndex < ammoCount && hp.GetHealth() > 0) 
             {
 
                 ItemMove temp = Instantiate(rock);
