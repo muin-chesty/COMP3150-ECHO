@@ -10,19 +10,10 @@ public class MasterUI : MonoBehaviour
     [SerializeField]
     private Text nutText;
 
-    [SerializeField]
-    private Text healthText;
-    [SerializeField]
-    private HealthManager hp;
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
+  
     void Update()
     {
         nutText.text = "Nuts & Bolts: " + throwScript.GetAmmoCount();
-        healthText.text = "Health: " + hp.GetHealth();
+     
     }
 }

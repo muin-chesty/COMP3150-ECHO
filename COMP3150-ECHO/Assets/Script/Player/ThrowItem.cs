@@ -11,11 +11,11 @@ public class ThrowItem : MonoBehaviour
     [SerializeField]
     private int ammoCount = 5;
     private int currentAmmoIndex = 0;
-    bool isClicked = false;
+   
     [Space]
     public GameObject itemRippleEffect;
     private const int LEFT_CLICK = 0;
-    private const int RIGHT_CLICK = 1;
+    
     public int GetAmmoCount()
     {
         return ammoCount - currentAmmoIndex;
@@ -32,7 +32,7 @@ public class ThrowItem : MonoBehaviour
         // IF RIGHT-MOUSE CLICKED
         if(Input.GetMouseButtonDown(LEFT_CLICK))
         {
-            isClicked = true;
+           
 
             // CHECK IF HAS AMMO
             if (currentAmmoIndex < ammoCount && hp.GetHealth() > 0) 

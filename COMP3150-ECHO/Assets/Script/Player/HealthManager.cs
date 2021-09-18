@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class HealthManager : MonoBehaviour
 {
@@ -10,7 +11,13 @@ public class HealthManager : MonoBehaviour
     [SerializeField]
     private GameObject uiCanvas;
 
+    public Text healthText;
 
+
+    private void Update()
+    {
+        healthText.text = "Health: " + HealthManager.health;
+    }
     public bool IsPlayerDead()
     {
         return isPlayerDead;

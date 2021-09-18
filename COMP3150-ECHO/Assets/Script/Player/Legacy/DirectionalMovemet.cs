@@ -3,13 +3,13 @@ using UnityEngine;
 public class DirectionalMovemet : MonoBehaviour
 {
     Vector2 movement;
-    Rigidbody2D rigidbody;
+    Rigidbody2D rb;
     [SerializeField]
     private float speed = 2f;
     
     void Start()
     {
-        rigidbody = GetComponent<Rigidbody2D>();
+        rb = GetComponent<Rigidbody2D>();
     }
 
     void Update()
@@ -26,6 +26,6 @@ public class DirectionalMovemet : MonoBehaviour
 
     private void FixedUpdate()
     {
-        rigidbody.velocity = transform.up * movement.y * (speed * Time.fixedDeltaTime);
+        rb.velocity = transform.up * movement.y * (speed * Time.fixedDeltaTime);
     }
 }
