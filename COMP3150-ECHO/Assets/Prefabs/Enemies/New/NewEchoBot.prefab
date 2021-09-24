@@ -78,7 +78,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: eef18d33c7eb7c64cb92f40f54a334b0, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -235,6 +235,10 @@ PrefabInstance:
     - target: {fileID: 7614995459663806386, guid: c67d4a97c2f5d024dbfea1f109957c44, type: 3}
       propertyPath: m_Name
       value: EchobotRippleEffect
+      objectReference: {fileID: 0}
+    - target: {fileID: 7614995459663806388, guid: c67d4a97c2f5d024dbfea1f109957c44, type: 3}
+      propertyPath: CollisionModule.minKillSpeed
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 7614995459663806391, guid: c67d4a97c2f5d024dbfea1f109957c44, type: 3}
       propertyPath: m_RootOrder

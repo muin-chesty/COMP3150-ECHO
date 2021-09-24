@@ -98,6 +98,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   keyCode: 0
+  keyEffect: {fileID: 5649588316323023326, guid: fc0fcad3395902b4fb2954c0cce1f4e1, type: 3}
 --- !u!1001 &3063261407667856913
 PrefabInstance:
   m_ObjectHideFlags: 0

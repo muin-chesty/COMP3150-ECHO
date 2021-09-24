@@ -6,9 +6,6 @@ using UnityEngine.Experimental.Rendering.Universal;
 public class VFXPlayer : MonoBehaviour
 {
     public ParticleSystem soundWaveEffect;
-    private Light2D lighting;
-
-    private float lightIntensity;
     Vector2 movement;
     Rigidbody2D rb;
     private float alpha = 1.0f;
@@ -16,8 +13,6 @@ public class VFXPlayer : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        lighting = GetComponentInChildren<Light2D>();
-        lightIntensity = 0.1f;
     }
 
     // Update is called once per frame
@@ -41,6 +36,5 @@ public class VFXPlayer : MonoBehaviour
         {
             soundWaveEffect.Stop();
         }
-        lighting.intensity = lightIntensity * (soundWaveEffect.particleCount)/5f;
     }
 }

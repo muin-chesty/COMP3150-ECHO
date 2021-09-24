@@ -13,6 +13,8 @@ public class Door : MonoBehaviour
     public bool keyRequired;
     public int keyCode;
     private bool keyFound;
+    private bool neverOpened;
+    public ParticleSystem particle;
 
     enum State
     {
@@ -31,14 +33,27 @@ public class Door : MonoBehaviour
         speed = 10;
         state = State.Idle;
         keyFound = false;
+        neverOpened = true;
+        particle.Stop();
     }
 
     // Update is called once per frame
     void Update()
     {
+        keyFound = keyManager.CheckKeyFound(keyCode);
+        if (neverOpened && keyRequired && keyFound && particle.isStopped)
+        {
+            particle.Play();
+        }
+        else if(!neverOpened)
+        {
+            particle.Stop();
+        }
+
         switch (state)
         {
             case State.Opening:
+                neverOpened = false;
                 door.transform.Translate(speed * Time.deltaTime, 0, 0);
                 if (door.transform.localPosition.x >= distance)
                 {
@@ -65,11 +80,8 @@ public class Door : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D collision)
     {
-        Debug.Log("enter");
         if (keyRequired == true)
         {
-            //check if key has beenn collected
-            keyFound = keyManager.CheckKeyFound(keyCode);
             if (keyFound)
             {
                 state = State.Opening;
@@ -84,7 +96,6 @@ public class Door : MonoBehaviour
 
     void OnTriggerExit2D(Collider2D collision)
     {
-        Debug.Log("exit");
         state = State.Closeing;
     }
 }
