@@ -4,7 +4,13 @@ using UnityEngine;
 public class Keys : MonoBehaviour
 {
     private static Keys keyCollection;
+    private VFXPlayer playerVisualEffects;
     public List<bool> keyStatus = new List<bool>();
+
+    private void Start()
+    {
+        playerVisualEffects = FindObjectOfType<VFXPlayer>();
+    }
 
     public void AddKey(bool status)
     {
@@ -26,7 +32,13 @@ public class Keys : MonoBehaviour
         if (i < keyStatus.Count)
         {
             keyStatus[i] = true;
+            TriggerParticles();
         }
+    }
+
+    private void TriggerParticles()
+    {
+        playerVisualEffects.KeyCollectedEffects();
     }
 }
 

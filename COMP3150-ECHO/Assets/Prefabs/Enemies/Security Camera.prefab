@@ -49,8 +49,8 @@ MonoBehaviour:
   maxRotation: 0
   minRotation: 0
   rotationalSpeed: 0
-  timer: 0
   rotateLeft: 0
+  timer: 0
 --- !u!1001 &2448941969214478004
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -58,6 +58,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1232688822190185730}
     m_Modifications:
+    - target: {fileID: 5189108066903827566, guid: f9c7c078752b3e94098351e8b5f495c3, type: 3}
+      propertyPath: m_SortingOrder
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 8302244798269679390, guid: f9c7c078752b3e94098351e8b5f495c3, type: 3}
       propertyPath: m_Name
       value: Field of View
@@ -121,6 +125,22 @@ PrefabInstance:
     - target: {fileID: 8503591575528382490, guid: f9c7c078752b3e94098351e8b5f495c3, type: 3}
       propertyPath: InitialModule.startLifetime.scalar
       value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8503591575528382490, guid: f9c7c078752b3e94098351e8b5f495c3, type: 3}
+      propertyPath: InitialModule.startColor.maxColor.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8503591575528382490, guid: f9c7c078752b3e94098351e8b5f495c3, type: 3}
+      propertyPath: InitialModule.startColor.maxColor.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8503591575528382490, guid: f9c7c078752b3e94098351e8b5f495c3, type: 3}
+      propertyPath: InitialModule.startColor.maxColor.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8503591575528382490, guid: f9c7c078752b3e94098351e8b5f495c3, type: 3}
+      propertyPath: InitialModule.startColor.maxColor.r
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9095978179570247144, guid: f9c7c078752b3e94098351e8b5f495c3, type: 3}
       propertyPath: m_RootOrder
@@ -238,15 +258,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1512827829531129071, guid: 4dd5650dd2c3b459581f217b256b8c9a, type: 3}
       propertyPath: m_Color.g
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1512827829531129071, guid: 4dd5650dd2c3b459581f217b256b8c9a, type: 3}
       propertyPath: m_Color.r
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1512827829531129071, guid: 4dd5650dd2c3b459581f217b256b8c9a, type: 3}
       propertyPath: m_SortingOrder
-      value: 10
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1512827829531129071, guid: 4dd5650dd2c3b459581f217b256b8c9a, type: 3}
       propertyPath: m_RenderingLayerMask
@@ -332,15 +352,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5631328200464575399, guid: 5fa241687c53141d68b4208b6c47cdb8, type: 3}
       propertyPath: m_Color.g
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5631328200464575399, guid: 5fa241687c53141d68b4208b6c47cdb8, type: 3}
       propertyPath: m_Color.r
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5631328200464575399, guid: 5fa241687c53141d68b4208b6c47cdb8, type: 3}
       propertyPath: m_SortingOrder
-      value: 10
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5631328200464575399, guid: 5fa241687c53141d68b4208b6c47cdb8, type: 3}
       propertyPath: m_Materials.Array.data[0]

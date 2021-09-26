@@ -6,6 +6,8 @@ using UnityEngine.Experimental.Rendering.Universal;
 public class VFXPlayer : MonoBehaviour
 {
     public ParticleSystem soundWaveEffect;
+    public ParticleSystem keyCollectedEffects;
+
     Vector2 movement;
     Rigidbody2D rb;
     private float alpha = 1.0f;
@@ -13,6 +15,7 @@ public class VFXPlayer : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        keyCollectedEffects.Stop();
     }
 
     // Update is called once per frame
@@ -36,5 +39,10 @@ public class VFXPlayer : MonoBehaviour
         {
             soundWaveEffect.Stop();
         }
+    }
+
+    public void KeyCollectedEffects()
+    {
+        keyCollectedEffects.Play();
     }
 }

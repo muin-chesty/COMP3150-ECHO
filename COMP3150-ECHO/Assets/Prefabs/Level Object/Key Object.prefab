@@ -98,7 +98,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   keyCode: 0
-  keyEffect: {fileID: 5649588316323023326, guid: fc0fcad3395902b4fb2954c0cce1f4e1, type: 3}
 --- !u!1001 &3063261407667856913
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -106,6 +105,26 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8461896731027932844}
     m_Modifications:
+    - target: {fileID: 7266174061449158159, guid: 4cee3a7a7c2ec4bcaba8968e0cf5376a, type: 3}
+      propertyPath: m_Color.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7266174061449158159, guid: 4cee3a7a7c2ec4bcaba8968e0cf5376a, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7266174061449158159, guid: 4cee3a7a7c2ec4bcaba8968e0cf5376a, type: 3}
+      propertyPath: m_Color.r
+      value: 0.9888946
+      objectReference: {fileID: 0}
+    - target: {fileID: 7266174061449158159, guid: 4cee3a7a7c2ec4bcaba8968e0cf5376a, type: 3}
+      propertyPath: m_SortingOrder
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7266174061449158159, guid: 4cee3a7a7c2ec4bcaba8968e0cf5376a, type: 3}
+      propertyPath: m_RenderingLayerMask
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7266174061449158159, guid: 4cee3a7a7c2ec4bcaba8968e0cf5376a, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 

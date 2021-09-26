@@ -172,7 +172,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 48e93eef0688c4a259cb0eddcd8661f7, type: 3}
-  m_Color: {r: 1, g: 0, b: 0.024585724, a: 1}
+  m_Color: {r: 1, g: 0.5615011, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -262,6 +262,50 @@ PrefabInstance:
     - target: {fileID: 5193736857507534166, guid: 4da405507b5f3c6469952716594e5c60, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5697406741698321536, guid: 4da405507b5f3c6469952716594e5c60, type: 3}
+      propertyPath: looping
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5697406741698321536, guid: 4da405507b5f3c6469952716594e5c60, type: 3}
+      propertyPath: prewarm
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5697406741698321536, guid: 4da405507b5f3c6469952716594e5c60, type: 3}
+      propertyPath: lengthInSec
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5697406741698321536, guid: 4da405507b5f3c6469952716594e5c60, type: 3}
+      propertyPath: startDelay.scalar
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5697406741698321536, guid: 4da405507b5f3c6469952716594e5c60, type: 3}
+      propertyPath: InitialModule.startLifetime.scalar
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5697406741698321536, guid: 4da405507b5f3c6469952716594e5c60, type: 3}
+      propertyPath: InitialModule.startSpeed.maxCurve.m_Curve.Array.data[1].time
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5697406741698321536, guid: 4da405507b5f3c6469952716594e5c60, type: 3}
+      propertyPath: InitialModule.startSpeed.maxCurve.m_Curve.Array.data[1].value
+      value: 0.16216289
+      objectReference: {fileID: 0}
+    - target: {fileID: 5697406741698321536, guid: 4da405507b5f3c6469952716594e5c60, type: 3}
+      propertyPath: InitialModule.startSpeed.maxCurve.m_Curve.Array.data[0].inSlope
+      value: 0.16216277
+      objectReference: {fileID: 0}
+    - target: {fileID: 5697406741698321536, guid: 4da405507b5f3c6469952716594e5c60, type: 3}
+      propertyPath: InitialModule.startSpeed.maxCurve.m_Curve.Array.data[1].inSlope
+      value: 0.16216277
+      objectReference: {fileID: 0}
+    - target: {fileID: 5697406741698321536, guid: 4da405507b5f3c6469952716594e5c60, type: 3}
+      propertyPath: InitialModule.startSpeed.maxCurve.m_Curve.Array.data[0].outSlope
+      value: 0.16216277
+      objectReference: {fileID: 0}
+    - target: {fileID: 5697406741698321536, guid: 4da405507b5f3c6469952716594e5c60, type: 3}
+      propertyPath: InitialModule.startSpeed.maxCurve.m_Curve.Array.data[1].outSlope
+      value: 0.16216277
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4da405507b5f3c6469952716594e5c60, type: 3}

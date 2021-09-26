@@ -24,9 +24,9 @@ public class ItemVFX : MonoBehaviour
         if (timeToLive <= 0)
         {
             soundWaveEffect.Stop();
-            if (soundWaveEffect.particleCount < 0)
+            if (soundWaveEffect.particleCount <= 0)
             {
-                Destroy(gameObject, 2.0f);
+                Destroy(gameObject);
             }
         }
     }
