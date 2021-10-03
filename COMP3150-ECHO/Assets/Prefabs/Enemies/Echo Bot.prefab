@@ -148,7 +148,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 833342b86db803a498b478d875de190b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ps: {fileID: 7614995459663806386, guid: c67d4a97c2f5d024dbfea1f109957c44, type: 3}
+  ps: {fileID: 2305886355846060658}
   maxRange: 5
   minRange: 1
   lightObject: {fileID: 0}
@@ -164,8 +164,24 @@ PrefabInstance:
       value: EchobotRippleEffect
       objectReference: {fileID: 0}
     - target: {fileID: 7614995459663806388, guid: c67d4a97c2f5d024dbfea1f109957c44, type: 3}
+      propertyPath: playOnAwake
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7614995459663806388, guid: c67d4a97c2f5d024dbfea1f109957c44, type: 3}
       propertyPath: CollisionModule.minKillSpeed
-      value: 50
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7614995459663806388, guid: c67d4a97c2f5d024dbfea1f109957c44, type: 3}
+      propertyPath: InitialModule.startSize.scalar
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7614995459663806388, guid: c67d4a97c2f5d024dbfea1f109957c44, type: 3}
+      propertyPath: CollisionModule.collisionMessages
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7614995459663806388, guid: c67d4a97c2f5d024dbfea1f109957c44, type: 3}
+      propertyPath: InitialModule.startLifetime.scalar
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 7614995459663806391, guid: c67d4a97c2f5d024dbfea1f109957c44, type: 3}
       propertyPath: m_RootOrder
@@ -213,6 +229,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c67d4a97c2f5d024dbfea1f109957c44, type: 3}
+--- !u!1 &2305886355846060658 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7614995459663806386, guid: c67d4a97c2f5d024dbfea1f109957c44, type: 3}
+  m_PrefabInstance: {fileID: 5309112197419820480}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &2305886355846060663 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7614995459663806391, guid: c67d4a97c2f5d024dbfea1f109957c44, type: 3}

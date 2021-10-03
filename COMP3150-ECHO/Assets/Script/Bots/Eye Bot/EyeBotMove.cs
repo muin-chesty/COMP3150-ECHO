@@ -13,13 +13,16 @@ public class EyeBotMove : MonoBehaviour
     public float minRotation;
     public float rotationalSpeed;
     public bool rotateLeft;
+    public bool rotationalMovementOnly;
 
 
     enum State
     {
         Idle,
         Moving,
-        Rotating
+        Rotating,
+
+        RotateOnly
     };
 
     private State state;
@@ -28,6 +31,12 @@ public class EyeBotMove : MonoBehaviour
     {
         state = State.Idle;
         idleTimer = timer;
+
+        //If the bot doesn;t need to move and only turn around in circles 
+        if (rotationalMovementOnly)
+        {
+            state = State.RotateOnly;
+        }
 
     }
 
