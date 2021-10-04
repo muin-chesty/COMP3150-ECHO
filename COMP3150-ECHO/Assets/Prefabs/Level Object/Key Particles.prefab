@@ -9,7 +9,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7884847881149667766}
-  - component: {fileID: 5649588316323023326}
   m_Layer: 0
   m_Name: Key Particles
   m_TagString: Untagged
@@ -32,19 +31,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &5649588316323023326
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5826298802963140593}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ddb88087580800644a1dd3487bddaf1b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  particle: {fileID: 1027061804154549588}
 --- !u!1001 &2554947563202665383
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -133,10 +119,5 @@ PrefabInstance:
 --- !u!4 &3973066562612099238 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1465875192818967297, guid: 94554d6b5fe8af543aaca56ea63c8fa6, type: 3}
-  m_PrefabInstance: {fileID: 2554947563202665383}
-  m_PrefabAsset: {fileID: 0}
---- !u!198 &1027061804154549588 stripped
-ParticleSystem:
-  m_CorrespondingSourceObject: {fileID: 3257268018474987251, guid: 94554d6b5fe8af543aaca56ea63c8fa6, type: 3}
   m_PrefabInstance: {fileID: 2554947563202665383}
   m_PrefabAsset: {fileID: 0}

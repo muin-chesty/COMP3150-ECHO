@@ -4,40 +4,61 @@ using UnityEngine;
 
 public class EyeBotMove : MonoBehaviour
 {
-    public float timer;
-    private float idleTimer;
+    //If the bot moves on a scripted path
+    public List<GameObject> Waypoints = new List<GameObject>();
 
+    public ParticleSystem soundWaveEffect;
+
+    public bool staticRotate;
+
+    private int index;
     public float speed;
 
-    public float maxRotation;
-    public float minRotation;
-    public float rotationalSpeed;
-    public bool rotateLeft;
-    public bool rotationalMovementOnly;
+
+    private Vector3 waypoint;
+    private Vector3 direction;
+
+
+    // Implement Rotation Only
+    public float minTime;
+    public float maxTime;
+    private float timer;
+
+    public float rotationSpeed;
+
+    //Implement Sound waves system - Complete rundown
 
 
     enum State
     {
-        Idle,
         Moving,
-        Rotating,
+        Turning,
 
-        RotateOnly
-    };
+        // for statically turning eye bots only
+        Idle,
+        StaticRotate
+    }
 
     private State state;
+
     // Start is called before the first frame update
     void Start()
     {
-        state = State.Idle;
-        idleTimer = timer;
+        timer = Random.Range(minTime, maxTime);
+        soundWaveEffect = GetComponentInChildren<ParticleSystem>();
+        soundWaveEffect.Stop();
 
-        //If the bot doesn;t need to move and only turn around in circles 
-        if (rotationalMovementOnly)
+        if (staticRotate)
         {
-            state = State.RotateOnly;
+            state = State.Idle;
         }
-
+        else
+        {
+            index = 0;
+            transform.position = Waypoints[index].transform.position;
+            waypoint = Waypoints[index++].transform.position;
+            state = State.Moving;
+        }
     }
 
     // Update is called once per frame
@@ -45,48 +66,82 @@ public class EyeBotMove : MonoBehaviour
     {
         switch (state)
         {
-            case State.Idle:
-                timer -= Time.deltaTime;
-                if(timer<= 0)
-                {
-                    state = State.Moving;
-                }
-                break;
-
             case State.Moving:
-                transform.Translate(0, speed * Time.deltaTime, 0); ;
-                break;
-
-            case State.Rotating:
-                if (!rotateLeft)
+                waypoint = Waypoints[index].transform.position;
+                if (soundWaveEffect.isStopped)
                 {
-                    transform.Rotate(0, 0, rotationalSpeed * Time.deltaTime);
-                    if (transform.rotation.eulerAngles.z >= maxRotation || transform.rotation.eulerAngles.z < minRotation)
+                    soundWaveEffect.Play();
+                }
+                // Calculates the distance traveled and the distance to the waypoint
+                float distanceTravelled = speed * Time.deltaTime;
+                float distanceToWaypoint = Vector3.Distance(waypoint, transform.position);
+
+                // move towards waypoint
+                Vector3 direction = waypoint - transform.position;
+                direction = direction.normalized;
+                transform.rotation = Quaternion.FromToRotation(Vector3.up, direction);
+                if (distanceToWaypoint <= distanceTravelled)
+                {
+                    // reached the waypoint, start heading to the next one
+                    transform.position = waypoint;
+                    if (index < Waypoints.Count - 1)
                     {
-                        transform.rotation.eulerAngles.z.Equals(minRotation);
-                        state = State.Idle;
-                        timer = idleTimer;
-                        rotateLeft = !rotateLeft;
+                        //Goes to next waypoint
+                        index++;
                     }
+                    else
+                    {
+                        //Path completed starting from the begining 
+                        index = 0;
+                    }
+                    state = State.Turning;
                 }
                 else
                 {
-                    transform.Rotate(0, 0, -rotationalSpeed * Time.deltaTime);
-                    if (transform.rotation.eulerAngles.z <= minRotation || transform.rotation.eulerAngles.z > maxRotation)
-                    {
-                        transform.rotation.eulerAngles.z.Equals(maxRotation);
-                        state = State.Idle;
-                        timer = idleTimer;
-                        rotateLeft = !rotateLeft;
-                    }
-
+                    // Moving
+                    transform.Translate(direction * distanceTravelled, Space.World);
                 }
                 break;
+
+            case State.Turning:
+                if (soundWaveEffect.isStopped)
+                {
+                    soundWaveEffect.Play();
+                }
+                direction = waypoint - transform.position;
+                direction = direction.normalized;
+                transform.rotation = Quaternion.FromToRotation(Vector3.up, direction);
+                state = State.Moving;
+                break;
+
+            case State.Idle:
+                timer -= Time.deltaTime;
+                if (timer <= 0)
+                {
+                    state = State.StaticRotate;
+                    timer = Random.Range(minTime, maxTime);
+                }
+                break;
+
+            case State.StaticRotate:
+
+                timer -= Time.deltaTime;
+                transform.Rotate(0, 0, rotationSpeed * Time.deltaTime);
+                // play ripptle effect
+                if (soundWaveEffect.isStopped)
+                {
+                    soundWaveEffect.Play();
+                }
+                if (timer <= 0)
+                {
+                    soundWaveEffect.Stop();
+                    state = State.Idle;
+                    timer = Random.Range(minTime, maxTime);
+                }
+
+                break;
         }
+
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        state = State.Rotating;
-    }
 }
