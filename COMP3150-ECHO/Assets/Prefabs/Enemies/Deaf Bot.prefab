@@ -190,7 +190,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 987503014105878234, guid: 6c530783b1f05ee4281b48da381f8322, type: 3}
       propertyPath: InitialModule.maxNumParticles
-      value: 10000
+      value: 100000
       objectReference: {fileID: 0}
     - target: {fileID: 987503014105878234, guid: 6c530783b1f05ee4281b48da381f8322, type: 3}
       propertyPath: CollisionModule.m_Bounce.scalar
