@@ -29,6 +29,10 @@ public class ThrowItem : MonoBehaviour
     }
     void Update()
     {
+        if(Time.timeScale == 0) 
+        {
+            return;
+        }
         // IF RIGHT-MOUSE CLICKED
         if(Input.GetMouseButtonDown(LEFT_CLICK))
         {

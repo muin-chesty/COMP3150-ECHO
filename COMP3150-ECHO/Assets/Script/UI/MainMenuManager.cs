@@ -14,7 +14,7 @@ public class MainMenuManager : MonoBehaviour
 
     private void Start()
     {
-
+        Time.timeScale = 1;
     }
 
     public void LevelSelect()
