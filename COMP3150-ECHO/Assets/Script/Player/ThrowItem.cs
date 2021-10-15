@@ -15,7 +15,9 @@ public class ThrowItem : MonoBehaviour
     [Space]
     public GameObject itemRippleEffect;
     private const int LEFT_CLICK = 0;
-    
+
+    private AnalyticsManager analytics;
+
     public int GetAmmoCount()
     {
         return ammoCount - currentAmmoIndex;
@@ -26,7 +28,9 @@ public class ThrowItem : MonoBehaviour
     private void Start()
     {
         hp = GetComponent<HealthManager>();
+        analytics = FindObjectOfType<AnalyticsManager>();
     }
+
     void Update()
     {
         if(Time.timeScale == 0) 
@@ -48,8 +52,13 @@ public class ThrowItem : MonoBehaviour
                 temp.SetTarget(lastMouseClick);
                 // COUNT FOR AN AMMO
                 currentAmmoIndex++;
+                analytics.IncrementThrowablesUsed();
 
 
+            }
+            else
+            {
+                analytics.ThrowablesDepleted();
             }
 
         }

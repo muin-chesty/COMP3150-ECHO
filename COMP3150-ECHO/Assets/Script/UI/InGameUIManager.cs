@@ -11,6 +11,10 @@ public class InGameUIManager : MonoBehaviour
     public GameObject levelCompletePanel;
     private RestartGame restartSystem;
 
+    private AnalyticsManager analytics;
+
+
+
     private bool paused;
     // Start is called before the first frame update
     void Start()
@@ -18,12 +22,13 @@ public class InGameUIManager : MonoBehaviour
         paused = false;
         Time.timeScale = 1;
         restartSystem = FindObjectOfType<RestartGame>();
+        analytics = FindObjectOfType<AnalyticsManager>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape) && !levelCompletePanel.active)
+        if (Input.GetKeyDown(KeyCode.Escape) && !levelCompletePanel.activeSelf)
         {
             paused = paused ? false : true;
             SetPaused(paused);
@@ -39,11 +44,13 @@ public class InGameUIManager : MonoBehaviour
     public void Restart()
     {
         restartSystem.RestartWholeGame();
+        analytics.GameEnded();
     }
 
     public void MainMenu()
     {
         SceneManager.LoadScene(0);
+        analytics.GameEnded();
     }
 
     void SetPaused(bool paused)
