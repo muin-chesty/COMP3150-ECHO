@@ -16,17 +16,53 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7614995459663806388, guid: c67d4a97c2f5d024dbfea1f109957c44, type: 3}
+      propertyPath: CollisionModule.radiusScale
+      value: 0.01
+      objectReference: {fileID: 0}
+    - target: {fileID: 7614995459663806388, guid: c67d4a97c2f5d024dbfea1f109957c44, type: 3}
+      propertyPath: InitialModule.startSize.scalar
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7614995459663806388, guid: c67d4a97c2f5d024dbfea1f109957c44, type: 3}
+      propertyPath: CollisionModule.collisionMessages
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7614995459663806388, guid: c67d4a97c2f5d024dbfea1f109957c44, type: 3}
       propertyPath: InitialModule.startColor.maxColor.b
-      value: 0.031413555
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7614995459663806388, guid: c67d4a97c2f5d024dbfea1f109957c44, type: 3}
       propertyPath: InitialModule.startColor.maxColor.g
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7614995459663806388, guid: c67d4a97c2f5d024dbfea1f109957c44, type: 3}
       propertyPath: InitialModule.startColor.maxColor.r
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7614995459663806388, guid: c67d4a97c2f5d024dbfea1f109957c44, type: 3}
+      propertyPath: ColorModule.gradient.maxGradient.key0.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7614995459663806388, guid: c67d4a97c2f5d024dbfea1f109957c44, type: 3}
+      propertyPath: ColorModule.gradient.maxGradient.key0.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7614995459663806388, guid: c67d4a97c2f5d024dbfea1f109957c44, type: 3}
+      propertyPath: ColorModule.gradient.maxGradient.key0.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7614995459663806388, guid: c67d4a97c2f5d024dbfea1f109957c44, type: 3}
+      propertyPath: CollisionModule.multiplyColliderForceByParticleSize
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7614995459663806388, guid: c67d4a97c2f5d024dbfea1f109957c44, type: 3}
+      propertyPath: CollisionModule.multiplyColliderForceByParticleSpeed
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7614995459663806389, guid: c67d4a97c2f5d024dbfea1f109957c44, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 10306, guid: 0000000000000000f000000000000000, type: 0}
     - target: {fileID: 7614995459663806391, guid: c67d4a97c2f5d024dbfea1f109957c44, type: 3}
       propertyPath: m_RootOrder
       value: 0
