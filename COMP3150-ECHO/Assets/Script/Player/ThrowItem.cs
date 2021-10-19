@@ -39,6 +39,10 @@ public class ThrowItem : MonoBehaviour
         {
             tutorial = config.isTutorial();
         }
+        else
+        {
+            tutorial = false;
+        }
     }
 
     void Update()

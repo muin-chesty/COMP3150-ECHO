@@ -22,6 +22,10 @@ public class HealthManager : MonoBehaviour
         {
             tutorial = config.isTutorial();
         }
+        else
+        {
+            tutorial = false;
+        }
     }
 
     private void Update()

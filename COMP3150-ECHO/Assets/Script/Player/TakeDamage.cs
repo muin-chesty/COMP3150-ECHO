@@ -30,6 +30,10 @@ public class TakeDamage : MonoBehaviour
         {
             tutorial = config.isTutorial();
         }
+        else
+        {
+            tutorial = false;
+        }
     }
 
     void Update()

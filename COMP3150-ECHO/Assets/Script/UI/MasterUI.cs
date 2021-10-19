@@ -18,6 +18,10 @@ public class MasterUI : MonoBehaviour
         {
             tutorial = config.isTutorial();
         }
+        else
+        {
+            tutorial = false;
+        }
     }
     void Update()
     {

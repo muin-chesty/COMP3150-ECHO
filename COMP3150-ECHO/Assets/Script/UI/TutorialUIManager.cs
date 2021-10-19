@@ -9,8 +9,6 @@ public class TutorialUIManager : MonoBehaviour
     private GameObject textObject;
     private Text textPanel;
 
-    private string customText;
-
     // Start is called before the first frame update
     void Start()
     {
