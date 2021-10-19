@@ -13,8 +13,6 @@ public class InGameUIManager : MonoBehaviour
 
     private AnalyticsManager analytics;
 
-
-
     private bool paused;
     // Start is called before the first frame update
     void Start()

@@ -3,20 +3,30 @@ using UnityEngine.SceneManagement;
 
 public class PlayerDetectionEchoBot : MonoBehaviour
 {
+    private TutorialSetting config;
+    private bool tutorial;
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        config = FindObjectOfType<TutorialSetting>();
+        if (config != null)
+        {
+            tutorial = config.isTutorial();
+        }
+        else
+        {
+            tutorial = false;
+        }
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 
     private void OnParticleCollision(GameObject other)
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        if (!tutorial)
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        }
+
     }
 }

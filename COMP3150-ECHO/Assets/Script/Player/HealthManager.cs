@@ -1,4 +1,4 @@
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
@@ -11,12 +11,29 @@ public class HealthManager : MonoBehaviour
     [SerializeField]
     private GameObject uiCanvas;
 
+    private TutorialSetting config;
+    private bool tutorial;
     public Text healthText;
 
+    private void Start()
+    {
+        config = FindObjectOfType<TutorialSetting>();
+        if (config != null)
+        {
+            tutorial = config.isTutorial();
+        }
+    }
 
     private void Update()
     {
-        healthText.text = "Health: " + HealthManager.health;
+        if (!tutorial)
+        {
+            healthText.text = "Health: " + HealthManager.health;
+        }
+        else
+        {
+            healthText.text = "Health: ∞";
+        }
     }
     public bool IsPlayerDead()
     {
@@ -34,7 +51,6 @@ public class HealthManager : MonoBehaviour
         }
         else
         {
-            
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }
         
@@ -59,4 +75,9 @@ public class HealthManager : MonoBehaviour
         }
     }
  
+    public void TutorialModeDamage()
+    {
+        Camera.main.backgroundColor = Color.red;
+    }
+
 }

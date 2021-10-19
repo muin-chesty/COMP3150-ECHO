@@ -16,24 +16,43 @@ public class TakeDamage : MonoBehaviour
 
     private bool hit;
 
+    private TutorialSetting config;
+    private bool tutorial;
+
     void Start()
     {
         isPlayerHit = false;
         hp = GetComponent<HealthManager>();
         analytics = FindObjectOfType<AnalyticsManager>();
+
+        config = FindObjectOfType<TutorialSetting>();
+        if (config != null)
+        {
+            tutorial = config.isTutorial();
+        }
     }
 
     void Update()
     {
+        Camera.main.backgroundColor = Color.black;
+
         if (isPlayerHit == true)
         {
-            timer += Time.deltaTime;
-            if (timer >= restartsIn)
+            if (!tutorial)
             {
-                Time.timeScale = 1f;
-                timer = 0f;
+                timer += Time.deltaTime;
+                if (timer >= restartsIn)
+                {
+                    Time.timeScale = 1f;
+                    timer = 0f;
+                    isPlayerHit = false;
+                    hp.TakeDamage(1);
+                }
+            }
+            else
+            {
                 isPlayerHit = false;
-                hp.TakeDamage(1);
+                hp.TutorialModeDamage();
             }
         }
     }
@@ -41,10 +60,11 @@ public class TakeDamage : MonoBehaviour
     {
         return isPlayerHit;
     }
+
     private void OnParticleCollision(GameObject other)
     {
         isPlayerHit = true;
-        if (hp.GetHealth() > 1) // TO ENSURE DIE TRANSITION DOESN'T APPEAR WHEN GAME IS OVER
+        if (hp.GetHealth() > 1 && !tutorial) // TO ENSURE DIE TRANSITION DOESN'T APPEAR WHEN GAME IS OVER
         {
             dieTransitionCanvas.gameObject.SetActive(true);
             Time.timeScale = 0.7f;

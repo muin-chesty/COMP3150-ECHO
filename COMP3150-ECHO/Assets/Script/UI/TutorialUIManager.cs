@@ -19,12 +19,6 @@ public class TutorialUIManager : MonoBehaviour
         textPanel.text = "";
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     public void UpdateTutorialText(string customText)
     {
         textPanel.text = customText;
