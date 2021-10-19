@@ -511,11 +511,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5532134614627601514, guid: 615084eec3f2e1345b0728801d7083e2, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -10.001984
+      value: -10
       objectReference: {fileID: 0}
     - target: {fileID: 5532134614627601514, guid: 615084eec3f2e1345b0728801d7083e2, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 21.508148
+      value: 21.5
       objectReference: {fileID: 0}
     - target: {fileID: 5532134614627601514, guid: 615084eec3f2e1345b0728801d7083e2, type: 3}
       propertyPath: m_LocalPosition.z
@@ -915,7 +915,7 @@ RectTransform:
   - {fileID: 1558425438}
   - {fileID: 1336540806}
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -1182,8 +1182,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1000
-  m_Sprite: {fileID: 21300000, guid: c82dc3483dcf37a40b6cb9b2d405561f, type: 3}
-  m_Color: {r: 0, g: 1, b: 0.103140354, a: 1}
+  m_Sprite: {fileID: 21300000, guid: 51c81bf0877531442a6406a9a653aca2, type: 3}
+  m_Color: {r: 0.5, g: 0.5, b: 0.5, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -1202,10 +1202,10 @@ Transform:
   m_GameObject: {fileID: 143320970}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 2.09, y: 2.32, z: 0}
-  m_LocalScale: {x: 0.4, y: 0.45, z: 1}
+  m_LocalScale: {x: 0.3, y: 0.3, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &146358051
 GameObject:
@@ -1327,7 +1327,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1022316327498554599, guid: 8ba92c2e06b01a043bae275930eca76e, type: 3}
       propertyPath: customText
-      value: Good job you found the key, The activated door is now humming and you
+      value: Good job you found the key, The activated door is now humming, and you
         can hear it. walk through the next door.
       objectReference: {fileID: 0}
     - target: {fileID: 1525332145252018203, guid: 8ba92c2e06b01a043bae275930eca76e, type: 3}
@@ -1466,6 +1466,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 426828442}
     m_Modifications:
+    - target: {fileID: 2305886355846060660, guid: 346b3ba4eca97ed46858575d8c7562fe, type: 3}
+      propertyPath: InitialModule.startSize.scalar
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3164087684863206858, guid: 346b3ba4eca97ed46858575d8c7562fe, type: 3}
       propertyPath: m_Name
       value: Echo Bot 2
@@ -1860,7 +1864,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &300694261
 PrefabInstance:
@@ -1871,9 +1875,9 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1022316327498554599, guid: 8ba92c2e06b01a043bae275930eca76e, type: 3}
       propertyPath: customText
-      value: This room contains Deaf bot. He doesn't hurt you but makes it really
-        hard to get around and see what is happening in the room even if you throw
-        nuts and bolts.
+      value: This room contains Deaf bot. He doesn't hurt you but makes it hard to
+        get around and see what is happening in the room even if you throw nuts and
+        bolts.
       objectReference: {fileID: 0}
     - target: {fileID: 1525332145252018203, guid: 8ba92c2e06b01a043bae275930eca76e, type: 3}
       propertyPath: m_Name
@@ -2072,7 +2076,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 14
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &326932012
 GameObject:
@@ -2133,7 +2137,7 @@ Transform:
   - {fileID: 889624697}
   - {fileID: 767009016}
   m_Father: {fileID: 0}
-  m_RootOrder: 15
+  m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &331716082
 PrefabInstance:
@@ -2972,8 +2976,8 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1022316327498554599, guid: 8ba92c2e06b01a043bae275930eca76e, type: 3}
       propertyPath: customText
-      value: 'Good job, You made it to the end of the introductions. Now try navigating
-        two level independantly. '
+      value: Good job, you made it to the end of the introductions. Now try navigating
+        two level independently.
       objectReference: {fileID: 0}
     - target: {fileID: 1525332145252018203, guid: 8ba92c2e06b01a043bae275930eca76e, type: 3}
       propertyPath: m_Name
@@ -3032,6 +3036,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1350857612}
     m_Modifications:
+    - target: {fileID: 2725938206140867922, guid: 058b4f4b1261ec64e8db6cf541c18fa3, type: 3}
+      propertyPath: InitialModule.startSize.scalar
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6735415021728286185, guid: 058b4f4b1261ec64e8db6cf541c18fa3, type: 3}
       propertyPath: m_Name
       value: Key 1
@@ -3550,6 +3558,38 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 426828442}
     m_Modifications:
+    - target: {fileID: 2305886355846060660, guid: 346b3ba4eca97ed46858575d8c7562fe, type: 3}
+      propertyPath: CollisionModule.radiusScale
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2305886355846060660, guid: 346b3ba4eca97ed46858575d8c7562fe, type: 3}
+      propertyPath: InitialModule.startSize.scalar
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2305886355846060660, guid: 346b3ba4eca97ed46858575d8c7562fe, type: 3}
+      propertyPath: ColorModule.gradient.maxGradient.atime1
+      value: 65535
+      objectReference: {fileID: 0}
+    - target: {fileID: 2305886355846060660, guid: 346b3ba4eca97ed46858575d8c7562fe, type: 3}
+      propertyPath: ColorModule.gradient.maxGradient.ctime1
+      value: 65535
+      objectReference: {fileID: 0}
+    - target: {fileID: 2305886355846060660, guid: 346b3ba4eca97ed46858575d8c7562fe, type: 3}
+      propertyPath: ColorModule.gradient.maxGradient.key1.a
+      value: 0.3529412
+      objectReference: {fileID: 0}
+    - target: {fileID: 2305886355846060660, guid: 346b3ba4eca97ed46858575d8c7562fe, type: 3}
+      propertyPath: ColorModule.gradient.maxGradient.key1.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2305886355846060660, guid: 346b3ba4eca97ed46858575d8c7562fe, type: 3}
+      propertyPath: ColorModule.gradient.maxGradient.key1.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2305886355846060660, guid: 346b3ba4eca97ed46858575d8c7562fe, type: 3}
+      propertyPath: ColorModule.gradient.maxGradient.key1.r
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3164087684863206858, guid: 346b3ba4eca97ed46858575d8c7562fe, type: 3}
       propertyPath: m_Name
       value: 'Echo Bot 1 '
@@ -3902,8 +3942,8 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1022316327498554599, guid: 8ba92c2e06b01a043bae275930eca76e, type: 3}
       propertyPath: customText
-      value: This room contains Echo bot, It uses echo location to find you, Avoid
-        walking into it's pulses
+      value: This room contains Echo bot, it uses echo location to find you, avoid
+        walking into its pulses
       objectReference: {fileID: 0}
     - target: {fileID: 1525332145252018203, guid: 8ba92c2e06b01a043bae275930eca76e, type: 3}
       propertyPath: m_Name
@@ -4402,7 +4442,7 @@ RectTransform:
   m_Children:
   - {fileID: 1877492240}
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -4507,7 +4547,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 20
+  m_RootOrder: 19
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &979159267
 PrefabInstance:
@@ -5495,7 +5535,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1166963268 stripped
 Transform:
@@ -6022,7 +6062,7 @@ Transform:
   - {fileID: 1832822560}
   - {fileID: 381031349}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1336540805
 GameObject:
@@ -6130,7 +6170,7 @@ Transform:
   - {fileID: 2034884021}
   - {fileID: 1137897080}
   m_Father: {fileID: 0}
-  m_RootOrder: 17
+  m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1381044591
 PrefabInstance:
@@ -6412,36 +6452,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3102636f07cfdad45bcc81a9acfce0ea, type: 3}
---- !u!1 &1502273075
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1502273076}
-  m_Layer: 0
-  m_Name: Tutorial Manager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1502273076
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1502273075}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1503993607 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6927820990552879431, guid: 8ba92c2e06b01a043bae275930eca76e, type: 3}
@@ -6454,6 +6464,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1350857612}
     m_Modifications:
+    - target: {fileID: 2725938206140867922, guid: 058b4f4b1261ec64e8db6cf541c18fa3, type: 3}
+      propertyPath: InitialModule.startSize.scalar
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6735415021728286185, guid: 058b4f4b1261ec64e8db6cf541c18fa3, type: 3}
       propertyPath: m_Name
       value: Key 3
@@ -6910,7 +6924,7 @@ Transform:
   - {fileID: 300694262}
   - {fileID: 888360966}
   m_Father: {fileID: 0}
-  m_RootOrder: 19
+  m_RootOrder: 18
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1598457670
 GameObject:
@@ -7039,7 +7053,7 @@ RectTransform:
   - {fileID: 395415587}
   - {fileID: 2074433783}
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -7065,10 +7079,10 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1022316327498554599, guid: 8ba92c2e06b01a043bae275930eca76e, type: 3}
       propertyPath: customText
-      value: This room has a camera, They don't make any noise so they can be hard
-        to spot, Throw some bolts and see if you can find it, Becareful not to get
-        caught, Just avoid it's field of view which you can see from a dark spot
-        when you throw a bolt.
+      value: This room has a camera, they don't make any noise so they can be hard
+        to spot, throw some bolts and see if you can find it, be careful not to get
+        caught, just avoid its field of view which you can see from a dark spot when
+        you throw a bolt.
       objectReference: {fileID: 0}
     - target: {fileID: 1444675761427717529, guid: 8ba92c2e06b01a043bae275930eca76e, type: 3}
       propertyPath: m_Size.x
@@ -7290,7 +7304,7 @@ Transform:
   m_Children:
   - {fileID: 1958155636}
   m_Father: {fileID: 0}
-  m_RootOrder: 18
+  m_RootOrder: 17
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1672495383 stripped
 GameObject:
@@ -7351,7 +7365,7 @@ RectTransform:
   - {fileID: 23052981}
   - {fileID: 423101122}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -7558,7 +7572,7 @@ RectTransform:
   - {fileID: 1010273623}
   - {fileID: 1924156783}
   m_Father: {fileID: 0}
-  m_RootOrder: 13
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -8233,7 +8247,7 @@ RectTransform:
   - {fileID: 1576598536}
   - {fileID: 1926349748}
   m_Father: {fileID: 0}
-  m_RootOrder: 12
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -9005,7 +9019,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1022316327498554599, guid: 8ba92c2e06b01a043bae275930eca76e, type: 3}
       propertyPath: customText
-      value: This room has an EyeBot. Avoid it's dark field of view wich can be seen
+      value: This room has an EyeBot. Avoid its dark field of view which can be seen
         when it is moving or when you throw a bolt. Look for the key while doing
         this.
       objectReference: {fileID: 0}
@@ -9451,6 +9465,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1350857612}
     m_Modifications:
+    - target: {fileID: 2725938206140867922, guid: 058b4f4b1261ec64e8db6cf541c18fa3, type: 3}
+      propertyPath: InitialModule.startSize.scalar
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6735415021728286185, guid: 058b4f4b1261ec64e8db6cf541c18fa3, type: 3}
       propertyPath: m_Name
       value: Key 2
@@ -9606,7 +9624,7 @@ Transform:
   - {fileID: 868231194}
   - {fileID: 520113860}
   m_Father: {fileID: 0}
-  m_RootOrder: 16
+  m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &2070899058
 PrefabInstance:

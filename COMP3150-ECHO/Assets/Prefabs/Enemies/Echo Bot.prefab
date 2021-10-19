@@ -77,7 +77,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: eef18d33c7eb7c64cb92f40f54a334b0, type: 3}
-  m_Color: {r: 1, g: 0, b: 0, a: 1}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -100,9 +100,9 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.01, y: 0.09}
+  m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 1.8
+  m_Radius: 2.2
 --- !u!50 &3164087684863206857
 Rigidbody2D:
   serializedVersion: 4
@@ -151,7 +151,6 @@ MonoBehaviour:
   ps: {fileID: 2305886355846060658}
   maxRange: 5
   minRange: 1
-  lightObject: {fileID: 0}
 --- !u!1001 &5309112197419820480
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -173,7 +172,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7614995459663806388, guid: c67d4a97c2f5d024dbfea1f109957c44, type: 3}
       propertyPath: InitialModule.startSize.scalar
-      value: 3
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7614995459663806388, guid: c67d4a97c2f5d024dbfea1f109957c44, type: 3}
       propertyPath: CollisionModule.collisionMessages

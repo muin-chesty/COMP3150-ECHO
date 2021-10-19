@@ -728,7 +728,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2725938206140867922, guid: 058b4f4b1261ec64e8db6cf541c18fa3, type: 3}
       propertyPath: InitialModule.startSize.scalar
-      value: 3
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2725938206140867922, guid: 058b4f4b1261ec64e8db6cf541c18fa3, type: 3}
       propertyPath: CollisionModule.collisionMessages
@@ -1344,12 +1344,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 164966812}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 14
+  m_Father: {fileID: 416273524}
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &164966814
 MonoBehaviour:
@@ -1797,6 +1797,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1595547764}
     m_Modifications:
+    - target: {fileID: 2725938206140867922, guid: 058b4f4b1261ec64e8db6cf541c18fa3, type: 3}
+      propertyPath: InitialModule.startSize.scalar
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5644214068997863454, guid: 058b4f4b1261ec64e8db6cf541c18fa3, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
     - target: {fileID: 6735415021728286185, guid: 058b4f4b1261ec64e8db6cf541c18fa3, type: 3}
       propertyPath: m_Name
       value: Key 1 - 1
@@ -2496,6 +2504,10 @@ PrefabInstance:
     - target: {fileID: 1459183081807318552, guid: 133c0924dfd04eb49ac2ce9cb957e4c7, type: 3}
       propertyPath: m_Simulated
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1732397423510584619, guid: 133c0924dfd04eb49ac2ce9cb957e4c7, type: 3}
+      propertyPath: CollisionModule.radiusScale
+      value: 0.01
       objectReference: {fileID: 0}
     - target: {fileID: 1873444634810875256, guid: 133c0924dfd04eb49ac2ce9cb957e4c7, type: 3}
       propertyPath: speed
@@ -3374,6 +3386,7 @@ Transform:
   - {fileID: 1863213380}
   - {fileID: 1000069406}
   - {fileID: 1664108859}
+  - {fileID: 164966813}
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -3447,6 +3460,10 @@ PrefabInstance:
     - target: {fileID: 3758477721781969684, guid: 3102636f07cfdad45bcc81a9acfce0ea, type: 3}
       propertyPath: rotationalSpeed
       value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 6340699685821134510, guid: 3102636f07cfdad45bcc81a9acfce0ea, type: 3}
+      propertyPath: CollisionModule.radiusScale
+      value: 0.01
       objectReference: {fileID: 0}
     - target: {fileID: 6702034169593325380, guid: 3102636f07cfdad45bcc81a9acfce0ea, type: 3}
       propertyPath: m_Name
@@ -3532,6 +3549,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1123802315}
     m_Modifications:
+    - target: {fileID: 1732397423510584619, guid: 133c0924dfd04eb49ac2ce9cb957e4c7, type: 3}
+      propertyPath: CollisionModule.radiusScale
+      value: 0.01
+      objectReference: {fileID: 0}
     - target: {fileID: 1873444634810875256, guid: 133c0924dfd04eb49ac2ce9cb957e4c7, type: 3}
       propertyPath: speed
       value: 10
@@ -5246,6 +5267,10 @@ PrefabInstance:
       propertyPath: rotationalSpeed
       value: 50
       objectReference: {fileID: 0}
+    - target: {fileID: 6340699685821134510, guid: 3102636f07cfdad45bcc81a9acfce0ea, type: 3}
+      propertyPath: CollisionModule.radiusScale
+      value: 0.01
+      objectReference: {fileID: 0}
     - target: {fileID: 6702034169593325380, guid: 3102636f07cfdad45bcc81a9acfce0ea, type: 3}
       propertyPath: m_Name
       value: Security Camera 3
@@ -5802,6 +5827,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1595547764}
     m_Modifications:
+    - target: {fileID: 2725938206140867922, guid: 058b4f4b1261ec64e8db6cf541c18fa3, type: 3}
+      propertyPath: InitialModule.startSize.scalar
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6735415021728286185, guid: 058b4f4b1261ec64e8db6cf541c18fa3, type: 3}
       propertyPath: m_Name
       value: Key 1 - 4
@@ -6871,6 +6900,10 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1732397423510584619, guid: 133c0924dfd04eb49ac2ce9cb957e4c7, type: 3}
+      propertyPath: CollisionModule.radiusScale
+      value: 0.01
+      objectReference: {fileID: 0}
     - target: {fileID: 1873444634810875256, guid: 133c0924dfd04eb49ac2ce9cb957e4c7, type: 3}
       propertyPath: speed
       value: 10
@@ -6897,7 +6930,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3438929204213390361, guid: 133c0924dfd04eb49ac2ce9cb957e4c7, type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3438929204213390361, guid: 133c0924dfd04eb49ac2ce9cb957e4c7, type: 3}
       propertyPath: m_LocalPosition.x
@@ -7022,6 +7055,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1595547764}
     m_Modifications:
+    - target: {fileID: 2725938206140867922, guid: 058b4f4b1261ec64e8db6cf541c18fa3, type: 3}
+      propertyPath: InitialModule.startSize.scalar
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6735415021728286185, guid: 058b4f4b1261ec64e8db6cf541c18fa3, type: 3}
       propertyPath: m_Name
       value: Key 2 - 3
@@ -7333,6 +7370,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 446696220}
     m_Modifications:
+    - target: {fileID: 1732397423510584619, guid: 133c0924dfd04eb49ac2ce9cb957e4c7, type: 3}
+      propertyPath: CollisionModule.radiusScale
+      value: 0.01
+      objectReference: {fileID: 0}
     - target: {fileID: 1873444634810875256, guid: 133c0924dfd04eb49ac2ce9cb957e4c7, type: 3}
       propertyPath: speed
       value: 0
@@ -7356,6 +7397,18 @@ PrefabInstance:
     - target: {fileID: 1873444634810875256, guid: 133c0924dfd04eb49ac2ce9cb957e4c7, type: 3}
       propertyPath: rotationSpeed
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2457629318557334527, guid: 133c0924dfd04eb49ac2ce9cb957e4c7, type: 3}
+      propertyPath: ColorModule.gradient.maxGradient.key0.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2457629318557334527, guid: 133c0924dfd04eb49ac2ce9cb957e4c7, type: 3}
+      propertyPath: ColorModule.gradient.maxGradient.key0.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2457629318557334527, guid: 133c0924dfd04eb49ac2ce9cb957e4c7, type: 3}
+      propertyPath: ColorModule.gradient.maxGradient.key0.r
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3438929204213390361, guid: 133c0924dfd04eb49ac2ce9cb957e4c7, type: 3}
       propertyPath: m_RootOrder
@@ -8077,8 +8130,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1000
-  m_Sprite: {fileID: 21300000, guid: c82dc3483dcf37a40b6cb9b2d405561f, type: 3}
-  m_Color: {r: 0, g: 1, b: 0.103140354, a: 1}
+  m_Sprite: {fileID: 21300000, guid: 51c81bf0877531442a6406a9a653aca2, type: 3}
+  m_Color: {r: 0.5019608, g: 0.5019608, b: 0.5019608, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -8097,7 +8150,7 @@ Transform:
   m_GameObject: {fileID: 913539319}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 2.09, y: 2.32, z: 0}
-  m_LocalScale: {x: 0.4, y: 0.45, z: 1}
+  m_LocalScale: {x: 0.3, y: 0.3, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 4
@@ -8194,6 +8247,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1118449652}
     m_Modifications:
+    - target: {fileID: 2305886355846060660, guid: 346b3ba4eca97ed46858575d8c7562fe, type: 3}
+      propertyPath: InitialModule.startSize.scalar
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3164087684863206858, guid: 346b3ba4eca97ed46858575d8c7562fe, type: 3}
       propertyPath: m_Name
       value: Echo Bot 2 - 1
@@ -8408,6 +8465,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1595547764}
     m_Modifications:
+    - target: {fileID: 2725938206140867922, guid: 058b4f4b1261ec64e8db6cf541c18fa3, type: 3}
+      propertyPath: InitialModule.startSize.scalar
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6735415021728286185, guid: 058b4f4b1261ec64e8db6cf541c18fa3, type: 3}
       propertyPath: m_Name
       value: Key 1 - 3
@@ -9130,6 +9191,10 @@ PrefabInstance:
       propertyPath: rotationalSpeed
       value: 50
       objectReference: {fileID: 0}
+    - target: {fileID: 6340699685821134510, guid: 3102636f07cfdad45bcc81a9acfce0ea, type: 3}
+      propertyPath: CollisionModule.radiusScale
+      value: 0.01
+      objectReference: {fileID: 0}
     - target: {fileID: 6702034169593325380, guid: 3102636f07cfdad45bcc81a9acfce0ea, type: 3}
       propertyPath: m_Name
       value: Security Camera 1
@@ -9153,7 +9218,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4407024506082396942, guid: 2876b488a450e9c4d8b3f0a758d4b3a3, type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4407024506082396942, guid: 2876b488a450e9c4d8b3f0a758d4b3a3, type: 3}
       propertyPath: m_LocalPosition.x
@@ -9224,6 +9289,10 @@ PrefabInstance:
     - target: {fileID: 2305886355846060660, guid: 346b3ba4eca97ed46858575d8c7562fe, type: 3}
       propertyPath: CollisionModule.minKillSpeed
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2305886355846060660, guid: 346b3ba4eca97ed46858575d8c7562fe, type: 3}
+      propertyPath: InitialModule.startSize.scalar
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2305886355846060660, guid: 346b3ba4eca97ed46858575d8c7562fe, type: 3}
       propertyPath: InitialModule.startLifetime.scalar
@@ -9737,7 +9806,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4407024506082396942, guid: 2876b488a450e9c4d8b3f0a758d4b3a3, type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4407024506082396942, guid: 2876b488a450e9c4d8b3f0a758d4b3a3, type: 3}
       propertyPath: m_LocalPosition.x
@@ -10058,6 +10127,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 446696220}
     m_Modifications:
+    - target: {fileID: 1732397423510584619, guid: 133c0924dfd04eb49ac2ce9cb957e4c7, type: 3}
+      propertyPath: CollisionModule.radiusScale
+      value: 0.01
+      objectReference: {fileID: 0}
     - target: {fileID: 1873444634810875256, guid: 133c0924dfd04eb49ac2ce9cb957e4c7, type: 3}
       propertyPath: speed
       value: 0
@@ -10096,11 +10169,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2457629318557334527, guid: 133c0924dfd04eb49ac2ce9cb957e4c7, type: 3}
       propertyPath: ColorModule.gradient.maxGradient.key0.g
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2457629318557334527, guid: 133c0924dfd04eb49ac2ce9cb957e4c7, type: 3}
       propertyPath: ColorModule.gradient.maxGradient.key0.r
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2457629318557334527, guid: 133c0924dfd04eb49ac2ce9cb957e4c7, type: 3}
       propertyPath: ColorModule.gradient.maxGradient.key1.a
@@ -10167,6 +10240,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1595547764}
     m_Modifications:
+    - target: {fileID: 2725938206140867922, guid: 058b4f4b1261ec64e8db6cf541c18fa3, type: 3}
+      propertyPath: InitialModule.startSize.scalar
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6735415021728286185, guid: 058b4f4b1261ec64e8db6cf541c18fa3, type: 3}
       propertyPath: m_Name
       value: Key 2 - 1
@@ -10300,6 +10377,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1118449652}
     m_Modifications:
+    - target: {fileID: 2305886355846060660, guid: 346b3ba4eca97ed46858575d8c7562fe, type: 3}
+      propertyPath: InitialModule.startSize.scalar
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3164087684863206858, guid: 346b3ba4eca97ed46858575d8c7562fe, type: 3}
       propertyPath: m_Name
       value: Echo Bot 2 - 2
@@ -11011,6 +11092,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1595547764}
     m_Modifications:
+    - target: {fileID: 2725938206140867922, guid: 058b4f4b1261ec64e8db6cf541c18fa3, type: 3}
+      propertyPath: InitialModule.startSize.scalar
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6735415021728286185, guid: 058b4f4b1261ec64e8db6cf541c18fa3, type: 3}
       propertyPath: m_Name
       value: Key 1 - 5
@@ -11648,6 +11733,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1469941056}
     m_Modifications:
+    - target: {fileID: 1732397423510584619, guid: 133c0924dfd04eb49ac2ce9cb957e4c7, type: 3}
+      propertyPath: CollisionModule.radiusScale
+      value: 0.01
+      objectReference: {fileID: 0}
     - target: {fileID: 1873444634810875256, guid: 133c0924dfd04eb49ac2ce9cb957e4c7, type: 3}
       propertyPath: speed
       value: 10
@@ -11970,6 +12059,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 446696220}
     m_Modifications:
+    - target: {fileID: 1732397423510584619, guid: 133c0924dfd04eb49ac2ce9cb957e4c7, type: 3}
+      propertyPath: CollisionModule.radiusScale
+      value: 0.01
+      objectReference: {fileID: 0}
     - target: {fileID: 1873444634810875256, guid: 133c0924dfd04eb49ac2ce9cb957e4c7, type: 3}
       propertyPath: speed
       value: 0
@@ -12012,11 +12105,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2457629318557334527, guid: 133c0924dfd04eb49ac2ce9cb957e4c7, type: 3}
       propertyPath: ColorModule.gradient.maxGradient.key0.g
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2457629318557334527, guid: 133c0924dfd04eb49ac2ce9cb957e4c7, type: 3}
       propertyPath: ColorModule.gradient.maxGradient.key0.r
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2457629318557334527, guid: 133c0924dfd04eb49ac2ce9cb957e4c7, type: 3}
       propertyPath: ColorModule.gradient.maxGradient.key1.a
@@ -13044,6 +13137,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1118449652}
     m_Modifications:
+    - target: {fileID: 2305886355846060660, guid: 346b3ba4eca97ed46858575d8c7562fe, type: 3}
+      propertyPath: InitialModule.startSize.scalar
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3164087684863206858, guid: 346b3ba4eca97ed46858575d8c7562fe, type: 3}
       propertyPath: m_Name
       value: Echo Bot 1 - 1
@@ -14799,6 +14896,10 @@ PrefabInstance:
       propertyPath: rotationalSpeed
       value: 50
       objectReference: {fileID: 0}
+    - target: {fileID: 6340699685821134510, guid: 3102636f07cfdad45bcc81a9acfce0ea, type: 3}
+      propertyPath: CollisionModule.radiusScale
+      value: 0.01
+      objectReference: {fileID: 0}
     - target: {fileID: 6702034169593325380, guid: 3102636f07cfdad45bcc81a9acfce0ea, type: 3}
       propertyPath: m_Name
       value: Security Camera 2
@@ -15199,6 +15300,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1595547764}
     m_Modifications:
+    - target: {fileID: 2725938206140867922, guid: 058b4f4b1261ec64e8db6cf541c18fa3, type: 3}
+      propertyPath: InitialModule.startSize.scalar
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6735415021728286185, guid: 058b4f4b1261ec64e8db6cf541c18fa3, type: 3}
       propertyPath: m_Name
       value: Key 1 - 2
@@ -16470,6 +16575,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1595547764}
     m_Modifications:
+    - target: {fileID: 2725938206140867922, guid: 058b4f4b1261ec64e8db6cf541c18fa3, type: 3}
+      propertyPath: InitialModule.startSize.scalar
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5644214068997863454, guid: 058b4f4b1261ec64e8db6cf541c18fa3, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
@@ -16561,7 +16670,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6948992981312551140, guid: f3d0d525fb5c72b428d1da2c96953337, type: 3}
       propertyPath: m_FalloffIntensity
-      value: 0.5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6948992981312551140, guid: f3d0d525fb5c72b428d1da2c96953337, type: 3}
       propertyPath: m_LightVolumeOpacity
@@ -16571,6 +16680,10 @@ PrefabInstance:
       propertyPath: m_AlphaBlendOnOverlap
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6948992981312551140, guid: f3d0d525fb5c72b428d1da2c96953337, type: 3}
+      propertyPath: m_PointLightOuterRadius
+      value: 0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 7963456547800721472, guid: f3d0d525fb5c72b428d1da2c96953337, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -16579,6 +16692,10 @@ PrefabInstance:
       propertyPath: keyCollectedEffects
       value: 
       objectReference: {fileID: 2064003885}
+    - target: {fileID: 8876955217638692231, guid: f3d0d525fb5c72b428d1da2c96953337, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 7a8f441cace6d456a966da196b23bdb7, type: 3}
     - target: {fileID: 8876955217638692344, guid: f3d0d525fb5c72b428d1da2c96953337, type: 3}
       propertyPath: uiCanvas
       value: 

@@ -15,7 +15,6 @@ public class ThrowItem : MonoBehaviour
     [Space]
     public GameObject itemRippleEffect;
     private const int LEFT_CLICK = 0;
-
     private AnalyticsManager analytics;
 
     public int GetAmmoCount()
@@ -37,15 +36,13 @@ public class ThrowItem : MonoBehaviour
         {
             return;
         }
-        // IF RIGHT-MOUSE CLICKED
+
+        // IF LEFT-MOUSE CLICKED
         if(Input.GetMouseButtonDown(LEFT_CLICK))
         {
-           
-
             // CHECK IF HAS AMMO
             if (currentAmmoIndex < ammoCount && hp.GetHealth() > 0) 
             {
-
                 ItemMove temp = Instantiate(rock);
                 temp.transform.position = transform.position;
                 lastMouseClick = cam.ScreenToWorldPoint(Input.mousePosition);
@@ -53,20 +50,11 @@ public class ThrowItem : MonoBehaviour
                 // COUNT FOR AN AMMO
                 currentAmmoIndex++;
                 analytics.IncrementThrowablesUsed();
-
-
             }
             else
             {
                 analytics.ThrowablesDepleted();
             }
-
         }
-
-       
-
     }
-
-
-
 }

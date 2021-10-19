@@ -11,7 +11,8 @@ GameObject:
   - component: {fileID: 259289579994664385}
   - component: {fileID: 259289579994664386}
   - component: {fileID: 174805498588481324}
-  m_Layer: 0
+  - component: {fileID: 1252019898817121521}
+  m_Layer: 22
   m_Name: Deaf Bot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -74,7 +75,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: 7a8f441cace6d456a966da196b23bdb7, type: 3}
-  m_Color: {r: 1, g: 0, b: 0, a: 1}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -97,6 +98,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timerInterval: 2
+--- !u!58 &1252019898817121521
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 259289579994664387}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.5
 --- !u!1001 &7458128915503666834
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -211,6 +228,34 @@ PrefabInstance:
     - target: {fileID: 987503014105878234, guid: 6c530783b1f05ee4281b48da381f8322, type: 3}
       propertyPath: InitialModule.startLifetime.scalar
       value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 987503014105878234, guid: 6c530783b1f05ee4281b48da381f8322, type: 3}
+      propertyPath: CollisionModule.collidesWith.m_Bits
+      value: 4195456
+      objectReference: {fileID: 0}
+    - target: {fileID: 987503014105878234, guid: 6c530783b1f05ee4281b48da381f8322, type: 3}
+      propertyPath: InitialModule.startColor.maxColor.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 987503014105878234, guid: 6c530783b1f05ee4281b48da381f8322, type: 3}
+      propertyPath: InitialModule.startColor.maxColor.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 987503014105878234, guid: 6c530783b1f05ee4281b48da381f8322, type: 3}
+      propertyPath: InitialModule.startColor.maxColor.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 987503014105878234, guid: 6c530783b1f05ee4281b48da381f8322, type: 3}
+      propertyPath: ColorModule.gradient.maxGradient.key0.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 987503014105878234, guid: 6c530783b1f05ee4281b48da381f8322, type: 3}
+      propertyPath: ColorModule.gradient.maxGradient.key0.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 987503014105878234, guid: 6c530783b1f05ee4281b48da381f8322, type: 3}
+      propertyPath: ColorModule.gradient.maxGradient.key0.r
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 987503014105878234, guid: 6c530783b1f05ee4281b48da381f8322, type: 3}
       propertyPath: CollisionModule.m_EnergyLossOnCollision.scalar

@@ -11,8 +11,8 @@ GameObject:
   - component: {fileID: 3438929204213390361}
   - component: {fileID: 3438929204213390360}
   - component: {fileID: 1459183081807318552}
-  - component: {fileID: -2724477772022254837}
   - component: {fileID: 1873444634810875256}
+  - component: {fileID: 5685042358988387935}
   m_Layer: 6
   m_Name: Eye Bot
   m_TagString: Untagged
@@ -76,8 +76,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 21300000, guid: a1e8b8fd92c9d4d66917647c599cd80e, type: 3}
-  m_Color: {r: 1, g: 0, b: 0, a: 1}
+  m_Sprite: {fileID: 21300000, guid: 13913d58aeaca4237a3a7b9c4851943d, type: 3}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -108,34 +108,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!60 &-2724477772022254837
-PolygonCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3438929204213390365}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
-    newSize: {x: 2, y: 2}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  m_Points:
-    m_Paths:
-    - - {x: 0, y: 0.5}
-      - {x: -0.4330127, y: -0.25000003}
-      - {x: 0.43301272, y: -0.24999996}
 --- !u!114 &1873444634810875256
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -155,6 +127,32 @@ MonoBehaviour:
   minTime: 0
   maxTime: 0
   rotationSpeed: 0
+--- !u!61 &5685042358988387935
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3438929204213390365}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1, y: 1}
+    newSize: {x: 2, y: 2}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1}
+  m_EdgeRadius: 0
 --- !u!1001 &5455731472382608459
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -188,11 +186,51 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7614995459663806388, guid: b3f883e4c9355cf4088a76d5b3fb97cb, type: 3}
       propertyPath: InitialModule.startColor.maxColor.g
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7614995459663806388, guid: b3f883e4c9355cf4088a76d5b3fb97cb, type: 3}
       propertyPath: InitialModule.startColor.maxColor.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7614995459663806388, guid: b3f883e4c9355cf4088a76d5b3fb97cb, type: 3}
+      propertyPath: ColorModule.gradient.maxGradient.atime1
+      value: 65535
+      objectReference: {fileID: 0}
+    - target: {fileID: 7614995459663806388, guid: b3f883e4c9355cf4088a76d5b3fb97cb, type: 3}
+      propertyPath: ColorModule.gradient.maxGradient.ctime0
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7614995459663806388, guid: b3f883e4c9355cf4088a76d5b3fb97cb, type: 3}
+      propertyPath: ColorModule.gradient.maxGradient.ctime1
+      value: 65535
+      objectReference: {fileID: 0}
+    - target: {fileID: 7614995459663806388, guid: b3f883e4c9355cf4088a76d5b3fb97cb, type: 3}
+      propertyPath: ColorModule.gradient.maxGradient.ctime2
+      value: 65535
+      objectReference: {fileID: 0}
+    - target: {fileID: 7614995459663806388, guid: b3f883e4c9355cf4088a76d5b3fb97cb, type: 3}
+      propertyPath: ColorModule.gradient.maxGradient.key0.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7614995459663806388, guid: b3f883e4c9355cf4088a76d5b3fb97cb, type: 3}
+      propertyPath: ColorModule.gradient.maxGradient.key0.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7614995459663806388, guid: b3f883e4c9355cf4088a76d5b3fb97cb, type: 3}
+      propertyPath: ColorModule.gradient.maxGradient.key0.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7614995459663806388, guid: b3f883e4c9355cf4088a76d5b3fb97cb, type: 3}
+      propertyPath: ColorModule.gradient.maxGradient.key1.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7614995459663806388, guid: b3f883e4c9355cf4088a76d5b3fb97cb, type: 3}
+      propertyPath: ColorModule.gradient.maxGradient.key1.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7614995459663806388, guid: b3f883e4c9355cf4088a76d5b3fb97cb, type: 3}
+      propertyPath: ColorModule.gradient.maxGradient.key1.r
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7614995459663806391, guid: b3f883e4c9355cf4088a76d5b3fb97cb, type: 3}
       propertyPath: m_RootOrder

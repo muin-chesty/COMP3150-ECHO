@@ -2978,6 +2978,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2305886355846060660, guid: 346b3ba4eca97ed46858575d8c7562fe, type: 3}
+      propertyPath: InitialModule.rotation3D
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2305886355846060660, guid: 346b3ba4eca97ed46858575d8c7562fe, type: 3}
+      propertyPath: InitialModule.startSize.scalar
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3164087684863206858, guid: 346b3ba4eca97ed46858575d8c7562fe, type: 3}
       propertyPath: m_Name
       value: Echo Bot
