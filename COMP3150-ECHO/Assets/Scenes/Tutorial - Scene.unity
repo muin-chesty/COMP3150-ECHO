@@ -3695,6 +3695,22 @@ PrefabInstance:
       propertyPath: m_Name
       value: Deaf Bot 2
       objectReference: {fileID: 0}
+    - target: {fileID: 2596749555508077348, guid: 19f716bb9ad81214abcbf5d617ada455, type: 3}
+      propertyPath: MaxDistance
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 2596749555508077348, guid: 19f716bb9ad81214abcbf5d617ada455, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 6c4913ed53793c647b10cd5316e41599, type: 3}
+    - target: {fileID: 2596749555508077348, guid: 19f716bb9ad81214abcbf5d617ada455, type: 3}
+      propertyPath: rolloffMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2596749555508077348, guid: 19f716bb9ad81214abcbf5d617ada455, type: 3}
+      propertyPath: panLevelCustomCurve.m_Curve.Array.data[0].value
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 19f716bb9ad81214abcbf5d617ada455, type: 3}
 --- !u!1001 &629092714
@@ -6659,6 +6675,26 @@ PrefabInstance:
     - target: {fileID: 259289579994664387, guid: 19f716bb9ad81214abcbf5d617ada455, type: 3}
       propertyPath: m_Name
       value: Deaf Bot 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2596749555508077348, guid: 19f716bb9ad81214abcbf5d617ada455, type: 3}
+      propertyPath: MaxDistance
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 2596749555508077348, guid: 19f716bb9ad81214abcbf5d617ada455, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 6c4913ed53793c647b10cd5316e41599, type: 3}
+    - target: {fileID: 2596749555508077348, guid: 19f716bb9ad81214abcbf5d617ada455, type: 3}
+      propertyPath: rolloffMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2596749555508077348, guid: 19f716bb9ad81214abcbf5d617ada455, type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2596749555508077348, guid: 19f716bb9ad81214abcbf5d617ada455, type: 3}
+      propertyPath: panLevelCustomCurve.m_Curve.Array.data[0].value
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 19f716bb9ad81214abcbf5d617ada455, type: 3}

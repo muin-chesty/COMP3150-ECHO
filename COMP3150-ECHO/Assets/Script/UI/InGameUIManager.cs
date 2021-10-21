@@ -9,6 +9,8 @@ using UnityEngine.SceneManagement;
 [RequireComponent(typeof(AudioSource))]
 public class InGameUIManager : MonoBehaviour
 {
+    private AudioSource[] allAudioSources;
+
     public GameObject pausePanel;
     public GameObject levelCompletePanel;
     private RestartGame restartSystem;
@@ -27,6 +29,7 @@ public class InGameUIManager : MonoBehaviour
         analytics = FindObjectOfType<AnalyticsManager>();
         audioSource = GetComponent<AudioSource>();
         audioSource.playOnAwake = false;
+        allAudioSources = FindObjectsOfType(typeof(AudioSource)) as AudioSource[];
     }
 
     // Update is called once per frame
@@ -34,9 +37,10 @@ public class InGameUIManager : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Escape) && !levelCompletePanel.activeSelf)
         {
+            StopAllAudio();
             paused = paused ? false : true;
             SetPaused(paused);
-        }    
+        }
     }
 
     public void Continue()
@@ -58,6 +62,7 @@ public class InGameUIManager : MonoBehaviour
         audioSource.PlayOneShot(audioSource.clip);
         analytics.GameEnded();
         StartCoroutine(Wait(0));
+        ResumeAudio();
         //SceneManager.LoadScene(0);
 
     }
@@ -85,5 +90,23 @@ public class InGameUIManager : MonoBehaviour
     {
         yield return new WaitUntil(() => audioSource.isPlaying == false);
         restartSystem.RestartWholeGame();
+    }
+
+
+    // TO be credited https://answers.unity.com/questions/194110/how-to-stop-all-audio.html
+    private void StopAllAudio()
+    {
+        foreach (AudioSource audioS in allAudioSources)
+        {
+            audioS.Pause();
+        }
+    }
+
+    private void ResumeAudio()
+    {
+        foreach (AudioSource audioS in allAudioSources)
+        {
+            audioS.Play();
+        }
     }
 }
