@@ -3,10 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Experimental.Rendering.Universal;
 
+
+[RequireComponent(typeof(AudioSource))]
 public class VFXPlayer : MonoBehaviour
 {
     public ParticleSystem soundWaveEffect;
     public ParticleSystem keyCollectedEffects;
+    public AudioSource audioSource;
 
     Vector2 movement;
     Rigidbody2D rb;
@@ -15,6 +18,7 @@ public class VFXPlayer : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        audioSource = GetComponent<AudioSource>();
         keyCollectedEffects.Stop();
     }
 
@@ -30,10 +34,17 @@ public class VFXPlayer : MonoBehaviour
                 alpha);
         if (rb.velocity != Vector2.zero && movement != Vector2.zero)
         {
-            if (soundWaveEffect.isStopped)
+            if (!audioSource.isPlaying)
             {
-                soundWaveEffect.Play();
+                audioSource.PlayOneShot(audioSource.clip);
+                if (soundWaveEffect.isStopped)
+                {
+                    soundWaveEffect.Play();
+
+                }
             }
+
+
         }
         else
         {
