@@ -9,11 +9,16 @@ public class RemoveItemAfterNSeconds : MonoBehaviour
 
     public bool itemStoppedMoving = false;
 
+    public bool isCollided = false;
+
+    private ItemMove move;
+
     [Space]
     public GameObject itemRippleEffect;
 
     void Start()
     {
+        move = GetComponent<ItemMove>();
         StartCoroutine(Remove());
 
     }
@@ -21,12 +26,16 @@ public class RemoveItemAfterNSeconds : MonoBehaviour
     IEnumerator Remove()
     {
         yield return new WaitForSeconds(removeAfter);
-        Destroy(gameObject);
+       // Destroy(gameObject);
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
 
-         Destroy(gameObject);
+        // Destroy(gameObject);
+        GameObject temp = Instantiate(itemRippleEffect);
+        temp.transform.position = transform.position;
+        isCollided = true;
+        move.Reverse();
     }
 
     private void OnDestroy()
