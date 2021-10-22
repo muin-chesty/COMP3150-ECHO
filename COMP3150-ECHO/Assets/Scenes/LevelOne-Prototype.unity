@@ -8133,6 +8133,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a6b6fdb74b9240441895e1d935d715b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pausePanel: {fileID: 982870067}
+  completePanel: {fileID: 759094344}
 --- !u!212 &913539321
 SpriteRenderer:
   m_ObjectHideFlags: 0
