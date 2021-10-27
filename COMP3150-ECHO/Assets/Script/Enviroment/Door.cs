@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(AudioSource))]
 public class Door : MonoBehaviour
 {
     private KeyManager keyManager;
@@ -15,6 +16,11 @@ public class Door : MonoBehaviour
     private bool keyFound;
     private bool neverOpened;
     public ParticleSystem particle;
+
+    public AudioClip hum;
+    public AudioClip openClose;
+    private AudioSource audioSource;
+    private bool isPlaying;
 
     enum State
     {
@@ -30,6 +36,7 @@ public class Door : MonoBehaviour
     void Start()
     {
         keyManager = FindObjectOfType<KeyManager>();
+        audioSource = GetComponent<AudioSource>();
         speed = 10;
         state = State.Idle;
         keyFound = false;
@@ -44,10 +51,19 @@ public class Door : MonoBehaviour
         if (neverOpened && keyRequired && keyFound && particle.isStopped)
         {
             particle.Play();
+            if (!audioSource.isPlaying)
+            {
+                audioSource.loop = true;
+                audioSource.clip = hum;
+                audioSource.Play();
+            }
+            
         }
         else if(!neverOpened)
         {
             particle.Stop();
+            audioSource.loop = false;
+            //audioSource.Stop();
         }
 
         switch (state)
@@ -55,20 +71,34 @@ public class Door : MonoBehaviour
             case State.Opening:
                 neverOpened = false;
                 door.transform.Translate(speed * Time.deltaTime, 0, 0);
+                if (!audioSource.isPlaying)
+                {
+                    audioSource.clip = openClose;
+                    audioSource.Play();
+                }
+
                 if (door.transform.localPosition.x >= distance)
                 {
                     doorPosition = Mathf.Clamp(door.transform.localPosition.x, 0, distance);
                     door.transform.localPosition = new Vector3(doorPosition, 0, 0);
+                    audioSource.Stop();
                     state = State.Idle;
                 }
                 break;
 
             case State.Closeing:
+                
                 door.transform.Translate(-speed * Time.deltaTime, 0, 0);
+                if (!audioSource.isPlaying)
+                {
+                    audioSource.clip = openClose;
+                    audioSource.Play();
+                }
                 if (door.transform.localPosition.x <= 0)
                 {
                     doorPosition = Mathf.Clamp(door.transform.localPosition.x, 0, distance);
                     door.transform.localPosition = new Vector3(doorPosition, 0, 0);
+                    audioSource.Stop();
                     state = State.Idle;
                 }
                 break;

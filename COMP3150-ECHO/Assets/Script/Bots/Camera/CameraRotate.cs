@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(AudioSource))]
 public class CameraRotate : MonoBehaviour
 {
     public float maxRotation;
@@ -20,6 +21,12 @@ public class CameraRotate : MonoBehaviour
     public float particletime;
     private float particletimer;
 
+    private AudioSource audioSource;
+    public AudioSource pivotSource;
+
+    public AudioClip detection;
+    public AudioClip pivot;
+
     enum State
     {
         Idle,
@@ -35,6 +42,11 @@ public class CameraRotate : MonoBehaviour
         idleTimer = timer;
         detected = false;
         particletimer = particletime;
+
+        audioSource = GetComponent<AudioSource>();
+        audioSource.clip = detection;
+
+        pivotSource.clip = pivot;
     }
 
     // Update is called once per frame
@@ -45,11 +57,17 @@ public class CameraRotate : MonoBehaviour
         {
             detected = false;
             detectionParticles.Stop();
+            audioSource.Stop();
+            audioSource.loop = false;
         }
 
         if (detected && detectionParticles.isStopped)
         {
+            Debug.Log(audioSource.clip);
             detectionParticles.Play();
+            audioSource.loop = true;
+
+            audioSource.Play();
         }
 
 
@@ -57,6 +75,7 @@ public class CameraRotate : MonoBehaviour
         {
             case State.Idle:
                 pivotParticles.Stop();
+                pivotSource.Stop();
                 timer -= Time.deltaTime;
                 if (timer <= 0)
                 {
@@ -69,6 +88,7 @@ public class CameraRotate : MonoBehaviour
                 if (pivotParticles.isStopped)
                 {
                     pivotParticles.Play();
+                    pivotSource.Play();
                 }
                 if (!rotateLeft)
                 {
@@ -76,6 +96,7 @@ public class CameraRotate : MonoBehaviour
                     if (transform.rotation.eulerAngles.z >= maxRotation || transform.rotation.eulerAngles.z < minRotation)
                     {
                         transform.rotation.eulerAngles.z.Equals(minRotation);
+                        pivotSource.Stop();
                         state = State.Idle;
                         timer = idleTimer;
                         rotateLeft = !rotateLeft;
@@ -86,7 +107,9 @@ public class CameraRotate : MonoBehaviour
                     transform.Rotate(0, 0, -rotationalSpeed * Time.deltaTime);
                     if (transform.rotation.eulerAngles.z <= minRotation || transform.rotation.eulerAngles.z > maxRotation)
                     {
+
                         transform.rotation.eulerAngles.z.Equals(maxRotation);
+                        pivotSource.Stop();
                         state = State.Idle;
                         timer = idleTimer;
                         rotateLeft = !rotateLeft;

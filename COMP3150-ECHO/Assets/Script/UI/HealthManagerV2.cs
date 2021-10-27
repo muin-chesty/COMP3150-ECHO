@@ -68,7 +68,6 @@ public class HealthManagerV2 : MonoBehaviour
             Camera.main.backgroundColor = Color.red;
             entityObject = entity;
             health -= damage;
-            Debug.Log(health / maxHealth);
             uiManager.HealthBar(health/maxHealth);
         }
         else

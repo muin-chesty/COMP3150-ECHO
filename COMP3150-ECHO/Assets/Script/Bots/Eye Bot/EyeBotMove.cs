@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(AudioSource))]
 public class EyeBotMove : MonoBehaviour
 {
     //If the bot moves on a scripted path
@@ -14,10 +15,8 @@ public class EyeBotMove : MonoBehaviour
     private int index;
     public float speed;
 
-
     private Vector3 waypoint;
     private Vector3 direction;
-
 
     // Implement Rotation Only
     public float minTime;
@@ -27,7 +26,7 @@ public class EyeBotMove : MonoBehaviour
     public float rotationSpeed;
 
     //Implement Sound waves system - Complete rundown
-
+    private AudioSource audioSource;
 
     enum State
     {
@@ -47,6 +46,8 @@ public class EyeBotMove : MonoBehaviour
         timer = Random.Range(minTime, maxTime);
         soundWaveEffect = GetComponentInChildren<ParticleSystem>();
         soundWaveEffect.Stop();
+
+        audioSource = GetComponent<AudioSource>();
 
         if (staticRotate)
         {
@@ -70,6 +71,8 @@ public class EyeBotMove : MonoBehaviour
                 waypoint = Waypoints[index].transform.position;
                 if (soundWaveEffect.isStopped)
                 {
+                    audioSource.Play();
+                    audioSource.loop = true;
                     soundWaveEffect.Play();
                 }
                 // Calculates the distance traveled and the distance to the waypoint
@@ -106,6 +109,7 @@ public class EyeBotMove : MonoBehaviour
             case State.Turning:
                 if (soundWaveEffect.isStopped)
                 {
+                    audioSource.Play();
                     soundWaveEffect.Play();
                 }
                 direction = waypoint - transform.position;
@@ -118,6 +122,7 @@ public class EyeBotMove : MonoBehaviour
                 timer -= Time.deltaTime;
                 if (timer <= 0)
                 {
+                    audioSource.Stop();
                     state = State.StaticRotate;
                     timer = Random.Range(minTime, maxTime);
                 }
@@ -130,15 +135,19 @@ public class EyeBotMove : MonoBehaviour
                 // play ripptle effect
                 if (soundWaveEffect.isStopped)
                 {
+                    audioSource.Play();
+                    audioSource.loop = true;
                     soundWaveEffect.Play();
+
                 }
+
                 if (timer <= 0)
                 {
                     soundWaveEffect.Stop();
+                    audioSource.Stop();
                     state = State.Idle;
                     timer = Random.Range(minTime, maxTime);
                 }
-
                 break;
         }
 

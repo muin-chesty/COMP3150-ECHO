@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(AudioSource))]
 public class RandomEchoSpawner : MonoBehaviour
 {
     [SerializeField]
@@ -14,10 +15,11 @@ public class RandomEchoSpawner : MonoBehaviour
     private float minRange = 1f;
     private float timer = 0f;
 
+    private AudioSource audioSource;
     private void Start()
     {
         ps = GetComponentInChildren<ParticleSystem>();
-        ps.Stop();
+        audioSource = GetComponent<AudioSource>();
 
         timer = Random.Range(minRange,maxRange);
     }
@@ -29,7 +31,8 @@ public class RandomEchoSpawner : MonoBehaviour
         if (ps.isStopped && timer <= 0)
         {
             ps.Play();
+            audioSource.Play();
             timer = Random.Range(minRange, maxRange);
-        }
+        } 
     }
 }

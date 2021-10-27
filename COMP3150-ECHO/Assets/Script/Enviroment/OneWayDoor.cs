@@ -2,12 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(AudioSource))]
 public class OneWayDoor : MonoBehaviour
 {
     public GameObject door;
     public float distance;
     private float speed;
     private float doorPosition;
+    private AudioSource audioSource;
 
     enum State
     {
@@ -25,7 +27,7 @@ public class OneWayDoor : MonoBehaviour
 
         speed = 10;
         state = State.Idle;
-
+        audioSource = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -36,20 +38,30 @@ public class OneWayDoor : MonoBehaviour
         {
             case State.Opening:
                 door.transform.Translate(speed * Time.deltaTime, 0, 0);
+                if (!audioSource.isPlaying)
+                {
+                    audioSource.Play();
+                }
                 if (door.transform.localPosition.x >= distance)
                 {
                     doorPosition = Mathf.Clamp(door.transform.localPosition.x, 0, distance);
                     door.transform.localPosition = new Vector3(doorPosition, 0, 0);
+                    audioSource.Stop();
                     state = State.Idle;
                 }
                 break;
 
             case State.Closeing:
+                if (!audioSource.isPlaying)
+                {
+                    audioSource.Play();
+                }
                 door.transform.Translate(-speed * Time.deltaTime, 0, 0);
                 if (door.transform.localPosition.x <= 0)
                 {
                     doorPosition = Mathf.Clamp(door.transform.localPosition.x, 0, distance);
                     door.transform.localPosition = new Vector3(doorPosition, 0, 0);
+                    audioSource.Stop();
                     state = State.Idle;
                 }
                 break;
