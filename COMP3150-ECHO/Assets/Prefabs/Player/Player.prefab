@@ -17,6 +17,7 @@ GameObject:
   - component: {fileID: 8876955217638692347}
   - component: {fileID: 8876955217638692345}
   - component: {fileID: 2147954920943931034}
+  - component: {fileID: 5597973190976662905}
   m_Layer: 9
   m_Name: Player
   m_TagString: Untagged
@@ -143,7 +144,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   soundWaveEffect: {fileID: 1341124613883458369}
   keyCollectedEffects: {fileID: 6332078875930174898}
-  audioSource: {fileID: 0}
+  keyCollected: {fileID: 8300000, guid: 97b1bf6582267ab429941dca80fda573, type: 3}
 --- !u!114 &8876955217638692346
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -281,6 +282,14 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!81 &5597973190976662905
+AudioListener:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8876955217638692348}
+  m_Enabled: 1
 --- !u!1001 &8850756553064811329
 PrefabInstance:
   m_ObjectHideFlags: 0

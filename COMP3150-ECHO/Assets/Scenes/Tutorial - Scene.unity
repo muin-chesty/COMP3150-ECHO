@@ -6545,7 +6545,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3758477721781969684, guid: 3102636f07cfdad45bcc81a9acfce0ea, type: 3}
       propertyPath: timer
-      value: 3
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3758477721781969684, guid: 3102636f07cfdad45bcc81a9acfce0ea, type: 3}
       propertyPath: rotateLeft
@@ -7932,7 +7932,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: af400b5ddfcc5e4438be6eac0f095aa7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hp: {fileID: 0}
 --- !u!114 &1832822559
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8016,7 +8015,7 @@ AudioSource:
   Pan2D: 0
   rolloffMode: 0
   BypassEffects: 0
-  BypassListenerEffects: 0
+  BypassListenerEffects: 1
   BypassReverbZones: 0
   rolloffCustomCurve:
     serializedVersion: 2
@@ -10105,6 +10104,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 98961494461992709, guid: 396674392c0c29f4e9b4232a5531931b, type: 3}
       propertyPath: m_BackGroundColor.r
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 98961494461992711, guid: 396674392c0c29f4e9b4232a5531931b, type: 3}
+      propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []

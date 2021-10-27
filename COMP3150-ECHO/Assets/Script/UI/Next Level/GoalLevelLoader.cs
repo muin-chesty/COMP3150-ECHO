@@ -26,10 +26,7 @@ public class GoalLevelLoader : MonoBehaviour
 
     private void StopAllAudio()
     {
-        foreach (AudioSource audioS in allAudioSources)
-        {
-            audioS.Pause();
-        }
+        AudioListener.pause = true;
     }
 
 }

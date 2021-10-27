@@ -29,6 +29,8 @@ public class InGameUIManager : MonoBehaviour
     public float healthColourTime;
     private float healthColourTimer;
 
+    //private AudioListener audioListener;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -38,11 +40,9 @@ public class InGameUIManager : MonoBehaviour
         analytics = FindObjectOfType<AnalyticsManager>();
         audioSource = GetComponent<AudioSource>();
         audioSource.playOnAwake = false;
-        allAudioSources = FindObjectsOfType(typeof(AudioSource)) as AudioSource[];
 
         healthBar = healthPanel.rectTransform.sizeDelta.x;
         healthColourTimer = 0;
-
     }
 
     // Update is called once per frame
@@ -53,6 +53,10 @@ public class InGameUIManager : MonoBehaviour
             StopAllAudio();
             paused = paused ? false : true;
             SetPaused(paused);
+            if(paused == false)
+            {
+                ResumeAudio();
+            }
         }
 
         healthColourTimer -= Time.deltaTime;
@@ -64,25 +68,26 @@ public class InGameUIManager : MonoBehaviour
 
     public void Continue()
     {
-        audioSource.PlayOneShot(audioSource.clip);
+        audioSource.Play();
+        StartCoroutine(WaitForAudio(audioSource));
         paused = paused ? false : true;
         SetPaused(paused);
+        ResumeAudio();
     }
 
     public void Restart()
     {
-        audioSource.PlayOneShot(audioSource.clip);
+        audioSource.Play();
         analytics.GameEnded();
-        StartCoroutine(RestartCoroutine());
+        StartCoroutine(RestartCoroutine(audioSource));
     }
 
     public void MainMenu()
     {
-        audioSource.PlayOneShot(audioSource.clip);
+        audioSource.Play();
         analytics.GameEnded();
-        StartCoroutine(Wait(0));
+        StartCoroutine(Wait(0, audioSource));
         ResumeAudio();
-        //SceneManager.LoadScene(0);
 
     }
 
@@ -94,39 +99,35 @@ public class InGameUIManager : MonoBehaviour
 
     public void NextLevel()
     {
-        audioSource.PlayOneShot(audioSource.clip);
-        StartCoroutine(Wait(SceneManager.GetActiveScene().buildIndex + 1));
-        //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex+1);
+        audioSource.Play();
+        StartCoroutine(Wait(SceneManager.GetActiveScene().buildIndex + 1,audioSource));
     }
 
-    IEnumerator Wait(int scene)
+    IEnumerator Wait(int scene, AudioSource aud)
     {
-        yield return new WaitUntil(() => audioSource.isPlaying == false);
+        yield return new WaitUntil(() => aud.isPlaying == false);
         SceneManager.LoadScene(scene);
     }
 
-    IEnumerator RestartCoroutine()
+    IEnumerator RestartCoroutine(AudioSource aud)
     {
-        yield return new WaitUntil(() => audioSource.isPlaying == false);
+        yield return new WaitUntil(() => aud.isPlaying == false);
         restartSystem.RestartWholeGame();
     }
 
+    IEnumerator WaitForAudio(AudioSource aud)
+    {
+        yield return new WaitUntil(() => aud.isPlaying == false);
+    }
 
-    // TO be credited https://answers.unity.com/questions/194110/how-to-stop-all-audio.html
     private void StopAllAudio()
     {
-        foreach (AudioSource audioS in allAudioSources)
-        {
-            audioS.Pause();
-        }
+        AudioListener.pause = true;
     }
 
     private void ResumeAudio()
     {
-        foreach (AudioSource audioS in allAudioSources)
-        {
-            audioS.Play();
-        }
+        AudioListener.pause = false;
     }
 
     public void HealthBar(float healthFraction)

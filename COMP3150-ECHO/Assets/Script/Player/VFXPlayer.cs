@@ -9,7 +9,9 @@ public class VFXPlayer : MonoBehaviour
 {
     public ParticleSystem soundWaveEffect;
     public ParticleSystem keyCollectedEffects;
-    public AudioSource audioSource;
+    private AudioSource audioSource;
+
+    public AudioClip keyCollected;
 
     Vector2 movement;
     Rigidbody2D rb;
@@ -43,8 +45,6 @@ public class VFXPlayer : MonoBehaviour
 
                 }
             }
-
-
         }
         else
         {
@@ -54,6 +54,7 @@ public class VFXPlayer : MonoBehaviour
 
     public void KeyCollectedEffects()
     {
+        audioSource.PlayOneShot(keyCollected);
         keyCollectedEffects.Play();
     }
 }
