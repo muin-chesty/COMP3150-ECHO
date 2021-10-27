@@ -4488,6 +4488,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Deaf Bot
       objectReference: {fileID: 0}
+    - target: {fileID: 2596749555508077348, guid: 19f716bb9ad81214abcbf5d617ada455, type: 3}
+      propertyPath: panLevelCustomCurve.m_Curve.Array.data[0].value
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 19f716bb9ad81214abcbf5d617ada455, type: 3}
 --- !u!4 &533103254 stripped
@@ -7846,7 +7850,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -5.0000305, y: -25}
+  m_AnchoredPosition: {x: -5, y: -25}
   m_SizeDelta: {x: 200, y: 5}
   m_Pivot: {x: 1, y: 0.5}
 --- !u!114 &856112951
@@ -9085,7 +9089,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: af400b5ddfcc5e4438be6eac0f095aa7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hp: {fileID: 0}
 --- !u!114 &1000069408
 MonoBehaviour:
   m_ObjectHideFlags: 0
