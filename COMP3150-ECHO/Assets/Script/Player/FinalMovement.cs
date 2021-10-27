@@ -8,11 +8,11 @@ public class FinalMovement : MonoBehaviour
     [SerializeField]
     private float speed = 10;
 
-    private HealthManager hp;
+    private HealthManagerV2 hp;
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        hp = GetComponent<HealthManager>();
+        hp = FindObjectOfType<HealthManagerV2>();
     }
 
     void Update()

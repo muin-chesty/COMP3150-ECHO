@@ -2,24 +2,33 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using UnityEngine.UIElements;
 using UnityEngine.SceneManagement;
 
 
 [RequireComponent(typeof(AudioSource))]
 public class InGameUIManager : MonoBehaviour
 {
+    // Audio Elements
     private AudioSource[] allAudioSources;
+    private AudioSource audioSource;
 
+    //UI Elements
     public GameObject pausePanel;
     public GameObject levelCompletePanel;
     private RestartGame restartSystem;
 
-    private AudioSource audioSource;
+    // Health UI Elements
+    public Image healthPanel;
+    private float healthBar;
 
+    //Analytics
     private AnalyticsManager analytics;
 
     private bool paused;
+
+    public float healthColourTime;
+    private float healthColourTimer;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -30,6 +39,10 @@ public class InGameUIManager : MonoBehaviour
         audioSource = GetComponent<AudioSource>();
         audioSource.playOnAwake = false;
         allAudioSources = FindObjectsOfType(typeof(AudioSource)) as AudioSource[];
+
+        healthBar = healthPanel.rectTransform.sizeDelta.x;
+        healthColourTimer = 0;
+
     }
 
     // Update is called once per frame
@@ -40,6 +53,12 @@ public class InGameUIManager : MonoBehaviour
             StopAllAudio();
             paused = paused ? false : true;
             SetPaused(paused);
+        }
+
+        healthColourTimer -= Time.deltaTime;
+        if (healthColourTimer <= 0)
+        {
+            healthPanel.color = Color.green;
         }
     }
 
@@ -108,5 +127,13 @@ public class InGameUIManager : MonoBehaviour
         {
             audioS.Play();
         }
+    }
+
+    public void HealthBar(float healthFraction)
+    {
+        healthColourTimer = healthColourTime;
+        healthPanel.color = Color.red;
+        healthPanel.rectTransform.sizeDelta = new Vector2(healthBar * healthFraction,
+        healthPanel.rectTransform.sizeDelta.y);
     }
 }
