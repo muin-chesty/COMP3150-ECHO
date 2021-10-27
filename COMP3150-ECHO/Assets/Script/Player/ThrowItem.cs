@@ -5,7 +5,7 @@ using UnityEngine;
 public class ThrowItem : MonoBehaviour
 {
     public Camera cam;
-    private HealthManager hp;
+    private HealthManagerV2 hp;
     private Vector2 lastMouseClick;
     public float speed = 10f;
     [SerializeField]
@@ -30,7 +30,7 @@ public class ThrowItem : MonoBehaviour
 
     private void Start()
     {
-        hp = GetComponent<HealthManager>();
+        hp = FindObjectOfType<HealthManagerV2>();
         analytics = FindObjectOfType<AnalyticsManager>();
 
         config = FindObjectOfType<TutorialSetting>();
