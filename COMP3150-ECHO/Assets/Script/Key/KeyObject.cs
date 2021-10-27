@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(AudioSource))]
 public class KeyObject : MonoBehaviour
 {
     public int keyCode;
@@ -10,12 +11,14 @@ public class KeyObject : MonoBehaviour
     public float timer;
     private float timerCounter;
 
+    private AudioSource audioSource;
     // Start is called before the first frame update
     void Start()
     {
         timerCounter = timer;
         keyManager = FindObjectOfType<KeyManager>();
         indicatorEffect = GetComponentInChildren<ParticleSystem>();
+        audioSource = GetComponent<AudioSource>();
     }
 
     void Update()
@@ -26,6 +29,7 @@ public class KeyObject : MonoBehaviour
             if (indicatorEffect.isStopped)
             {
                 indicatorEffect.Play();
+                audioSource.Play();
             }
             timerCounter = timer;
         }
