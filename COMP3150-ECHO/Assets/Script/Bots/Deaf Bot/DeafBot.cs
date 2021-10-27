@@ -35,6 +35,7 @@ public class DeafBot : MonoBehaviour
                 StartCoroutine(WaitAndStop());
                 timer = timerInterval;
             }
+            Debug.Log(deaf.particleCount/100000f);
             audioSource.volume = deaf.particleCount/200000f;
         }
     }
