@@ -11,7 +11,13 @@ public class CameraRotate : MonoBehaviour
 
     public float timer;
     private float idleTimer;
+    private bool detected;
 
+    public ParticleSystem pivotParticles;
+    public ParticleSystem detectionParticles;
+
+    public float particletime;
+    private float particletimer;
 
     enum State
     {
@@ -26,14 +32,29 @@ public class CameraRotate : MonoBehaviour
     {
         state = State.Idle;
         idleTimer = timer;
+        detected = false;
+        particletimer = particletime;
     }
 
     // Update is called once per frame
     void Update()
     {
+        particletimer -= Time.deltaTime;
+        if (particletimer <= 0)
+        {
+            detected = false;
+            detectionParticles.Stop();
+        }
+
+        if(detected && detectionParticles.isStopped)
+        {
+            detectionParticles.Play();
+        }
+
         switch (state)
         {
             case State.Idle:
+                pivotParticles.Stop();
                 timer -= Time.deltaTime;
                 if (timer <= 0)
                 {
@@ -43,6 +64,10 @@ public class CameraRotate : MonoBehaviour
                 break;
 
             case State.Rotating:
+                if (pivotParticles.isStopped)
+                {
+                    pivotParticles.Play();
+                }
                 if (!rotateLeft)
                 {
                     transform.Rotate(0, 0, rotationalSpeed * Time.deltaTime);
@@ -68,4 +93,11 @@ public class CameraRotate : MonoBehaviour
                 break;
         }
     }
+
+    public void Detected(bool state)
+    {
+        particletimer = particletime;
+        detected = state;
+    }
+
 }
