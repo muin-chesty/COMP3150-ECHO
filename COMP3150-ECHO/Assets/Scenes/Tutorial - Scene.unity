@@ -1404,8 +1404,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1022316327498554599, guid: 8ba92c2e06b01a043bae275930eca76e, type: 3}
       propertyPath: customText
-      value: Good job you found the key, The activated door is now humming, and you
-        can hear it. walk through the next door.
+      value: Now you have found the key, Find the locked pressure door, and run
       objectReference: {fileID: 0}
     - target: {fileID: 1525332145252018203, guid: 8ba92c2e06b01a043bae275930eca76e, type: 3}
       propertyPath: m_Name
@@ -1952,9 +1951,8 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1022316327498554599, guid: 8ba92c2e06b01a043bae275930eca76e, type: 3}
       propertyPath: customText
-      value: This room contains Deaf bot. He doesn't hurt you but makes it hard to
-        get around and see what is happening in the room even if you throw nuts and
-        bolts.
+      value: "This room contains Deafbot, it wouldn\u2019t kill you, but it can blind
+        your sight for a period of time"
       objectReference: {fileID: 0}
     - target: {fileID: 1525332145252018203, guid: 8ba92c2e06b01a043bae275930eca76e, type: 3}
       propertyPath: m_Name
@@ -2746,6 +2744,82 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 64a4e32f75734af4abf7cee1db6d93b8, type: 3}
+--- !u!1 &393478704
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 393478705}
+  - component: {fileID: 393478707}
+  - component: {fileID: 393478706}
+  m_Layer: 5
+  m_Name: Tutorial Text Background
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &393478705
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 393478704}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 1907146565}
+  m_Father: {fileID: 1768440509}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0}
+  m_AnchorMax: {x: 0.5, y: 0}
+  m_AnchoredPosition: {x: 0, y: 50}
+  m_SizeDelta: {x: 600, y: 60}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &393478706
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 393478704}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.392}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: 13913d58aeaca4237a3a7b9c4851943d, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &393478707
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 393478704}
+  m_CullTransparentMesh: 1
 --- !u!1 &395415586
 GameObject:
   m_ObjectHideFlags: 0
@@ -3100,12 +3174,12 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1022316327498554599, guid: 8ba92c2e06b01a043bae275930eca76e, type: 3}
       propertyPath: customText
-      value: Good job, you made it to the end of the introductions. Now try navigating
-        two level independently.
+      value: LAST!!! Use what you have learnt, survive, and beat the level. ENJOY
+        THE GAME!!!
       objectReference: {fileID: 0}
     - target: {fileID: 1525332145252018203, guid: 8ba92c2e06b01a043bae275930eca76e, type: 3}
       propertyPath: m_Name
-      value: UI trigger
+      value: UI trigger 7
       objectReference: {fileID: 0}
     - target: {fileID: 6927820990552879431, guid: 8ba92c2e06b01a043bae275930eca76e, type: 3}
       propertyPath: m_RootOrder
@@ -4082,8 +4156,8 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1022316327498554599, guid: 8ba92c2e06b01a043bae275930eca76e, type: 3}
       propertyPath: customText
-      value: This room contains Echo bot, it uses echo location to find you, avoid
-        walking into its pulses
+      value: Echo bot has deadly impulses that can locate your position, find a cover
+        ASAP
       objectReference: {fileID: 0}
     - target: {fileID: 1525332145252018203, guid: 8ba92c2e06b01a043bae275930eca76e, type: 3}
       propertyPath: m_Name
@@ -6493,6 +6567,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Security Camera 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6702034169593325380, guid: 3102636f07cfdad45bcc81a9acfce0ea, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3102636f07cfdad45bcc81a9acfce0ea, type: 3}
 --- !u!4 &1503993607 stripped
@@ -7156,10 +7234,8 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1022316327498554599, guid: 8ba92c2e06b01a043bae275930eca76e, type: 3}
       propertyPath: customText
-      value: This room has a camera, they don't make any noise so they can be hard
-        to spot, throw some bolts and see if you can find it, be careful not to get
-        caught, just avoid its field of view which you can see from a dark spot when
-        you throw a bolt.
+      value: Careful with the surveillance camera, Try throwing Nuts & Bolts to avoid
+        them.
       objectReference: {fileID: 0}
     - target: {fileID: 1444675761427717529, guid: 8ba92c2e06b01a043bae275930eca76e, type: 3}
       propertyPath: m_Size.x
@@ -7439,7 +7515,7 @@ RectTransform:
   - {fileID: 1245374588}
   - {fileID: 746900429}
   - {fileID: 1869099523}
-  - {fileID: 1907146565}
+  - {fileID: 393478705}
   - {fileID: 23052981}
   - {fileID: 423101122}
   m_Father: {fileID: 0}
@@ -7897,6 +7973,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e96956e9279727b448f278edfd82c2ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  textBackground: {fileID: 393478706}
+  textColourTime: 1
 --- !u!114 &1832822562
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8721,12 +8799,12 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 1768440509}
-  m_RootOrder: 5
+  m_Father: {fileID: 393478705}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 0, y: 50}
+  m_AnchoredPosition: {x: 0, y: 30.00001}
   m_SizeDelta: {x: 600, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1907146566
@@ -9196,9 +9274,8 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1022316327498554599, guid: 8ba92c2e06b01a043bae275930eca76e, type: 3}
       propertyPath: customText
-      value: This room has an EyeBot. Avoid its dark field of view which can be seen
-        when it is moving or when you throw a bolt. Look for the key while doing
-        this.
+      value: The room contains an Eyebot. Beware with its detection range and try
+        to find the hidden key
       objectReference: {fileID: 0}
     - target: {fileID: 1525332145252018203, guid: 8ba92c2e06b01a043bae275930eca76e, type: 3}
       propertyPath: m_Name
@@ -10511,9 +10588,8 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1022316327498554599, guid: 8ba92c2e06b01a043bae275930eca76e, type: 3}
       propertyPath: customText
-      value: Welcome to the Tutorial Level. Here we'll introduce how to play the
-        game. To start, try finding a door into the room. Too explore Press left
-        click to throw some nuts and bolts to see where you're going.
+      value: Welcome to ECHO!!! Press W,A,S,D to move freely and Try to find a way
+        to the next room.
       objectReference: {fileID: 0}
     - target: {fileID: 1444675761427717529, guid: 8ba92c2e06b01a043bae275930eca76e, type: 3}
       propertyPath: m_Size.x
