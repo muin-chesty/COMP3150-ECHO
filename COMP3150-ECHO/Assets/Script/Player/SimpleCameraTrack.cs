@@ -8,5 +8,6 @@ public class SimpleCameraTrack : MonoBehaviour
     void LateUpdate()
     {
         transform.position = player.position;
+        transform.rotation = Quaternion.identity;
     }
 }

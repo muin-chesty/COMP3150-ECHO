@@ -28,6 +28,7 @@ public class FinalMovement : MonoBehaviour
             rb.velocity = movement * speed * Time.fixedDeltaTime;
             rb.rotation = 0f;
             rb.angularVelocity = 0f;
+            rb.rotation = 0f;
         }
        
     }
