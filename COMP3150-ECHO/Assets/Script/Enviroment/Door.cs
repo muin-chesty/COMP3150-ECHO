@@ -21,7 +21,6 @@ public class Door : MonoBehaviour
     public AudioClip openClose;
     private AudioSource audioSource;
     private bool isPlaying;
-
     enum State
     {
         Opening,
@@ -30,7 +29,6 @@ public class Door : MonoBehaviour
     };
 
     private State state;
-
 
     // Start is called before the first frame update
     void Start()
@@ -63,7 +61,6 @@ public class Door : MonoBehaviour
         {
             particle.Stop();
             audioSource.loop = false;
-            //audioSource.Stop();
         }
 
         switch (state)
